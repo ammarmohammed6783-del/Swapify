@@ -1,8 +1,8 @@
-import Description from "./Description"
+import Description from "./components_components/Description"
 
 function Feed() {
     return (
-        <div className="m-auto">
+        <div className="mx-auto">
             <Description />
         </div>
     )
