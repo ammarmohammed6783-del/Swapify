@@ -13,7 +13,7 @@ function Nav() {
     };
 
     return (
-        <div className="flex justify-evenly items-center h-14 shadow px-4">
+        <div className="flex justify-evenly items-center h-14 shadow px-4 border-b border-gray-300">
             {/* Logo / Title */}
             <p className="font-medium text-lg">Trade Hub</p>
 
