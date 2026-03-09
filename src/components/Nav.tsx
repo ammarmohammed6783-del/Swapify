@@ -13,11 +13,11 @@ function Nav() {
     };
 
     return (
-        <div className="fixed top-0 left-0 w-full h-14 shadow px-4 bg-white flex justify-between items-center">
-            {/* Logo / Title */}
-            <p className="font-medium text-lg">Trade Hub</p>
-
-            {/* Search Form */}
+        <div className="fixed top-0 left-0 w-full h-14 shadow px-4 bg-white flex justify-between items-center z-10">
+            <div className="flex gap-3 items-center">
+                <p className="font-medium text-lg">Trade Hub</p>
+                <button className="bg-black text-white flex items-center gap-2 rounded py-1 px-2">Sign in</button>
+            </div>
             <form
                 onSubmit={handleSearch}
                 className="flex items-center bg-gray-100 rounded px-2 py-1 gap-2 w-1/2"
@@ -32,7 +32,6 @@ function Nav() {
                 />
             </form>
 
-            {/* Icons & Button */}
             <div className="flex items-center gap-4">
                 <TbBrightnessUp className="text-xl cursor-pointer" />
                 <button className="bg-black text-white flex items-center gap-2 rounded py-1 px-2">

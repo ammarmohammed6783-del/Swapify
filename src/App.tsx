@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <Nav />
-      <div className='flex mt-15'>
+      <div className='flex mt-14'>
         <Navigation />
         <Feed />
       </div>
