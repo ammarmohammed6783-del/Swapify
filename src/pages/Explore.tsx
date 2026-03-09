@@ -16,7 +16,7 @@ const Explore = () => {
             <div className='flex mt-14'>
                 <Navigation />
                 <div className="">
-                    <Feed infos={info}/>
+                    <Feed infos={info} />
                 </div>
             </div>
         </div>
