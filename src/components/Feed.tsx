@@ -1,18 +1,25 @@
 import Card from "./components_components/Card-product"
 import Category from "./components_components/Category"
 import Description from "./components_components/Description"
+import Ready from "./components_components/Ready"
 
-function Feed() {
-    let categories = ["electronics", "tools", "toys", "clothing", "music", "photography", "books", "others"]
+interface FeedProps {
+    infos: {
+        heading: string,
+        categories: string[]
+    }
+}
+
+function Feed({ infos }: FeedProps) {
     return (
         <div className="mx-20">
             <Description />
             <div className="my-10">
                 <div className="my-10">
-                    <h2 className="text-2xl font-medium my-2">Browse Categories</h2>
+                    <h2 className="text-2xl font-medium my-2">{infos.heading}</h2>
                     <div className="flex gap-1">
                         {
-                            categories.map((cat, index) => (
+                            infos.categories.map((cat, index) => (
                                 <Category key={index} text={cat} />
                             ))
                         }
@@ -28,6 +35,7 @@ function Feed() {
                     <Card /><Card /><Card /><Card />
                 </div>
             </div>
+            <Ready />
         </div>
     )
 }

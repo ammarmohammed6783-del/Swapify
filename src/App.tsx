@@ -1,17 +1,20 @@
 import './index.css'
-import Nav from './components/Nav'
-import Feed from './components/Feed'
-import Navigation from './components/Navigation'
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import Explore from './pages/Explore'
+import Items from './pages/Items'
+import Messages from './pages/Messages'
+import Profile from './pages/Profile'
 
 function App() {
   return (
-    <div>
-      <Nav />
-      <div className='flex mt-14'>
-        <Navigation />
-        <Feed />
-      </div>
-    </div>
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/explore' element={<Explore />} />
+      <Route path='/items' element={<Items />} />
+      <Route path='/messages' element={<Messages />} />
+      <Route path='/profile' element={<Profile />} />
+    </Routes>
   )
 }
 
