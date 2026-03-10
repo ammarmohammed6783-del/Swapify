@@ -70,6 +70,7 @@ const Profile = () => {
                         </div>
                     </div>
                 </div>
+                <p>add navigation here for the cards that you'll add</p>
             </div>
         </div>
     )
