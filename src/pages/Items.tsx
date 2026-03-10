@@ -50,6 +50,37 @@ const Items = () => {
         },
     ];
 
+    let objs = [
+        {
+            listing: {
+                title: "professional camera lens",
+                tags: ["tag"],
+                postedAgo: "4 days ago",
+                stats: {
+                    views: 156,
+                    offers: 12
+                },
+                actions: ["View Offers", "Edit Listing"],
+                status: "Active",
+                moreOptionsIcon: "BsThreeDots"
+            }
+        },
+        {
+            "listing": {
+                "title": "red premium wine bottle",
+                "tags": ["organic", "limited edition"],
+                "postedAgo": "2 days ago",
+                "stats": {
+                    "views": 98,
+                    "offers": 5
+                },
+                "actions": ["View Offers", "Edit Listing"],
+                "status": "Active",
+                "moreOptionsIcon": "BsThreeDots"
+            }
+        }
+    ]
+
     return (
         <div>
             <Nav />
@@ -72,42 +103,19 @@ const Items = () => {
                             ))
                         }
                     </div>
+                    <h1>navigation here</h1>
                     <div>
-                        <div className="p-5 flex items-center justify-between border border-gray-300 rounded-lg my-3">
-                            <div className="flex gap-5 items-center">
-                                <div className="w-35 h-35 rounded-lg bg-black"></div>
-                                <div>
-                                    <h3 className="font-medium">professional camera lens</h3>
-                                    <div className="flex gap-3 my-1">
-                                        <div className="border border-gray-300 rounded-lg w-fit px-2">tag</div>
-                                        <p className="text-gray-500">4 days ago</p>
-                                    </div>
-                                    <div className="flex gap-3 items-center my-1">
-                                        <p className="flex items-center gap-1 text-sm">
-                                            <IoEyeOutline />
-                                            <span className="font-bold">156</span>
-                                            <span className="text-gray-500">views</span>
-                                        </p>
-                                        <p><span className="font-bold">12</span> <span className="text-gray-600">offers</span></p>
-                                    </div>
-                                    <div className="flex gap-2">
-                                        <button className="px-3 py-1 border border-gray-300 rounded-lg font-bold">View Offers</button>
-                                        <button className="px-3 py-1 border border-gray-300 rounded-lg font-bold">Edit Listing</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="flex items-center gap-3 item self-start">
-                                <button className="px-3 py-1 bg-black text-white rounded-lg">Active</button>
-                                <BsThreeDots />
-                            </div>
-                        </div>
+                        {
+                            objs.map((ele, index) => (
+                                <WideCard info={ele} key={index}/>
+                            ))
+                        }
                     </div>
                 </div>
             </div>
         </div>
     )
 }
-
 export default Items;
 
 
@@ -123,4 +131,71 @@ function Card({ info }: { info: CardInfo }) {
             <p>{info.text}</p>
         </div>
     )
+}
+
+
+
+
+type Listing = {
+    title: string;
+    tags: string[];
+    postedAgo: string;
+    stats: {
+        views: number;
+        offers: number;
+    };
+    actions: string[];
+    status: string;
+    moreOptionsIcon: string; // or React component type if you want dynamic icons
+};
+
+type WideCardInfo = {
+    info: {
+        listing: Listing;
+    };
+};
+
+function WideCard({ info }: WideCardInfo) {
+    const { listing } = info;
+
+    return (
+        <div className="p-5 flex items-center justify-between border border-gray-300 rounded-lg my-3">
+            <div className="flex gap-5 items-center">
+                <div className="w-35 h-35 rounded-lg bg-black"></div>
+                <div>
+                    <h3 className="font-medium">{listing.title}</h3>
+                    <div className="flex gap-3 my-1">
+                        {listing.tags.map((tag, index) => (
+                            <div key={index} className="border border-gray-300 rounded-lg w-fit px-2">
+                                {tag}
+                            </div>
+                        ))}
+                        <p className="text-gray-500">{listing.postedAgo}</p>
+                    </div>
+                    <div className="flex gap-3 items-center my-1">
+                        <p className="flex items-center gap-1 text-sm">
+                            <IoEyeOutline />
+                            <span className="font-bold">{listing.stats.views}</span>
+                            <span className="text-gray-500">views</span>
+                        </p>
+                        <p>
+                            <span className="font-bold">{listing.stats.offers}</span>{" "}
+                            <span className="text-gray-600">offers</span>
+                        </p>
+                    </div>
+                    <div className="flex gap-2">
+                        {listing.actions.map((action, index) => (
+                            <button key={index} className="px-3 py-1 border border-gray-300 rounded-lg font-bold">
+                                {action}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            </div>
+            <div className="flex items-center gap-3 item self-start">
+                <button className="px-3 py-1 bg-black text-white rounded-lg">{listing.status}</button>
+                <BsThreeDots />
+            </div>
+        </div>
+    );
 }
