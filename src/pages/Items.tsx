@@ -2,7 +2,9 @@ import { useState } from "react";
 import Nav from "../components/Nav"
 import Navigation from "../components/Navigation"
 
+import { IoEyeOutline } from "react-icons/io5";
 import { IoMdAdd } from "react-icons/io";
+import { BsThreeDots } from "react-icons/bs";
 
 const Items = () => {
 
@@ -70,6 +72,36 @@ const Items = () => {
                             ))
                         }
                     </div>
+                    <div>
+                        <div className="p-5 flex items-center justify-between border border-gray-300 rounded-lg my-3">
+                            <div className="flex gap-5 items-center">
+                                <div className="w-35 h-35 rounded-lg bg-black"></div>
+                                <div>
+                                    <h3 className="font-medium">professional camera lens</h3>
+                                    <div className="flex gap-3 my-1">
+                                        <div className="border border-gray-300 rounded-lg w-fit px-2">tag</div>
+                                        <p className="text-gray-500">4 days ago</p>
+                                    </div>
+                                    <div className="flex gap-3 items-center my-1">
+                                        <p className="flex items-center gap-1 text-sm">
+                                            <IoEyeOutline />
+                                            <span className="font-bold">156</span>
+                                            <span className="text-gray-500">views</span>
+                                        </p>
+                                        <p><span className="font-bold">12</span> <span className="text-gray-600">offers</span></p>
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <button className="px-3 py-1 border border-gray-300 rounded-lg font-bold">View Offers</button>
+                                        <button className="px-3 py-1 border border-gray-300 rounded-lg font-bold">Edit Listing</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-3 item self-start">
+                                <button className="px-3 py-1 bg-black text-white rounded-lg">Active</button>
+                                <BsThreeDots />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -84,7 +116,7 @@ type CardInfo = {
     text: string;
 };
 
-function Card({ info } : {info: CardInfo}) {
+function Card({ info }: { info: CardInfo }) {
     return (
         <div className="rounded-lg p-5 m-1 border border-gray-300 w-full">
             <p className="font-bold text-2xl">{info.value}</p>
