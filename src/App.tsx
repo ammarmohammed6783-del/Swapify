@@ -5,6 +5,7 @@ import Explore from './pages/Explore'
 import Items from './pages/Items'
 import Messages from './pages/Messages'
 import Profile from './pages/Profile'
+import SignIn from './pages/SignIn'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path='/items' element={<Items />} />
       <Route path='/messages' element={<Messages />} />
       <Route path='/profile' element={<Profile />} />
+      <Route path='/signIn' element={<SignIn />} />
     </Routes>
   )
 }

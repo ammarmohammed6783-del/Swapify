@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { TbBrightnessUp } from "react-icons/tb";
 import { IoMdAdd, IoIosSearch } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 function Nav() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -16,7 +17,9 @@ function Nav() {
         <div className="fixed top-0 left-0 w-full h-14 shadow px-4 bg-white flex justify-between items-center z-10">
             <div className="flex gap-3 items-center">
                 <p className="font-medium text-lg">Trade Hub</p>
-                <button className="bg-black text-white flex items-center gap-2 rounded py-1 px-2">Sign in</button>
+                <Link to="/signin">
+                    <button className="bg-black text-white flex items-center gap-2 rounded py-1 px-2">Sign up</button>
+                </Link>
             </div>
             <form
                 onSubmit={handleSearch}
