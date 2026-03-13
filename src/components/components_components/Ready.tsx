@@ -1,4 +1,5 @@
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Ready = () => {
     return (
@@ -7,7 +8,9 @@ const Ready = () => {
             <p className="text-gray-600 max-w-2xl">List your items, browse what others have to offer, and make trades that work for both parties.</p>
             <p className="text-gray-600 py-1">No money involved, just honest exchange</p>
             <div className="flex gap-2 my-2">
-                <button className="py-2 px-3 bg-black rounded-lg text-white flex items-center gap-2">List Your First Item <FaArrowRightLong className="size-3"/></button>
+                <Link to="/profile">
+                    <button className="py-2 px-3 bg-black rounded-lg text-white flex items-center gap-2">List Your First Item <FaArrowRightLong className="size-3" /></button>
+                </Link>
             </div>
         </div>
     )
