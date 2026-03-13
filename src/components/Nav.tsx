@@ -37,10 +37,12 @@ function Nav() {
 
             <div className="flex items-center gap-4">
                 <TbBrightnessUp className="text-xl cursor-pointer" />
-                <button className="bg-black text-white flex items-center gap-2 rounded py-1 px-2">
-                    <IoMdAdd className="text-white" />
-                    List Item
-                </button>
+                <Link to="/items">
+                    <button className="bg-black text-white flex items-center gap-2 rounded py-1 px-2">
+                        <IoMdAdd className="text-white" />
+                        List Item
+                    </button>
+                </Link>
             </div>
         </div>
     );
