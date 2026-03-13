@@ -1,10 +1,33 @@
+import { useState } from "react";
 import Nav from "../components/Nav"
 import Navigation from "../components/Navigation"
 
 import { IoSearchOutline } from "react-icons/io5";
+import User from "../components/User";
 
 
 const Messages = () => {
+
+    let users = [
+        {
+            photoName: "MM",
+            userName: "Ammar Mohammed",
+            message: "yes brother there are aloooot out there..."
+        },
+        {
+            photoName: "IS",
+            userName: "Ingi Sami",
+            message: "yes brother there are aloooot out there..."
+        },
+        {
+            photoName: "MA",
+            userName: "Mohammed Ali",
+            message: "yes brother there are aloooot out there..."
+        },
+    ]
+
+    const [searchedName, setSearchedName] = useState("");
+
     return (
         <div>
             <Nav />
@@ -18,6 +41,7 @@ const Messages = () => {
                                 <form className="flex items-center gap-2 bg-gray-100 rounded-lg px-3 py-2 w-full max-w-md">
                                     <IoSearchOutline className="text-gray-500 text-lg" />
                                     <input
+                                        onChange={(e) => { setSearchedName(e.target.value) }}
                                         type="text"
                                         placeholder="Search messages..."
                                         className="bg-gray-100 focus:outline-none w-full text-gray-700 placeholder-gray-400"
@@ -26,9 +50,13 @@ const Messages = () => {
                             </div>
                         </div>
                         <div className="my-3">
-                            <User />
-                            <User />
-                            <User />
+                            {
+                                users.map((ele, index) => {
+                                    if (ele.userName.toLowerCase().includes(searchedName.toLowerCase())) {
+                                        return <User element={ele} key={index} />
+                                    }
+                                })
+                            }
                         </div>
                     </div>
                     <div className="h-full flex justify-center items-center flex-col p-5 text-center w-2/3">
@@ -42,18 +70,3 @@ const Messages = () => {
 }
 
 export default Messages
-
-
-function User() {
-    return (
-        <div className="rounded-lg py-3 hover:bg-gray-100 px-5 flex gap-3">
-            <div className="w-13">
-                <div className="rounded-full flex justify-center items-center bg-gray-300 w-10 h-10 text-sm">MM</div>
-            </div>
-            <div className="overflow-auto">
-                <h3>Ali Mohammed</h3>
-                <p className="text-sm text-gray-500">yes brother there are aloooot out there...</p>
-            </div>
-        </div>
-    )
-}
