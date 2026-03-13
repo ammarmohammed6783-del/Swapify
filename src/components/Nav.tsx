@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useThemeContext } from '../ThemeContext'; // import your hook
+import { useThemeContext } from '../theme/ThemeContext'; // import your hook
 
 import { LuMoon } from "react-icons/lu";
 import { TbBrightnessUp } from "react-icons/tb";
@@ -7,12 +7,10 @@ import { IoMdAdd, IoIosSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 function Nav() {
-    const [light, setLight] = useState(true);
     const { theme, setTheme } = useThemeContext();
 
     const toggleTheme = () => {
         setTheme(theme === 'light' ? 'dark' : 'light');
-        setLight(!light);
     };
 
     const [searchTerm, setSearchTerm] = useState("");
@@ -25,7 +23,7 @@ function Nav() {
     };
 
     return (
-        <div className="fixed top-0 left-0 w-full h-14 shadow px-4 flex justify-between items-center z-10 bg-white text-black">
+        <div className="fixed top-0 left-0 w-full h-14 shadow px-4 flex justify-between items-center z-10   bg-white text-black dark:bg-black dark:text-white">
             <div className="flex gap-3 items-center">
                 <p className="font-medium text-lg">Trade Hub</p>
                 <Link to="/signin">
@@ -48,7 +46,7 @@ function Nav() {
 
             <div className="flex items-center gap-4">
                 {
-                    light ? <LuMoon className="text-xl cursor-pointer" onClick={toggleTheme} /> : <TbBrightnessUp className="text-xl cursor-pointer" onClick={toggleTheme}/>
+                    theme === 'light' ? <LuMoon className="text-xl cursor-pointer" onClick={toggleTheme} /> : <TbBrightnessUp className="text-xl cursor-pointer" onClick={toggleTheme}/>
                 }
                 <Link to="/items">
                     <button className="bg-black text-white flex items-center gap-2 rounded py-1 px-2">
