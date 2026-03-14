@@ -1,6 +1,4 @@
 import { useState } from "react";
-import Nav from "../components/Nav"
-import Navigation from "../components/Navigation"
 
 import { IoSearchOutline } from "react-icons/io5";
 import User from "../components/User";
@@ -29,11 +27,8 @@ const Messages = () => {
     const [searchedName, setSearchedName] = useState("");
 
     return (
-        <div>
-            <Nav />
-            <div className='flex mt-14 h-[calc(100vh-3.5rem)]'>
-                <Navigation />
-                <div className="w-[70%] h-11/12 m-auto flex border border-gray-300 rounded-lg">
+        <div className="h-[calc(100vh-3.5rem)] pt-5">
+            <div className="w-[70%] h-[90%] m-auto flex border border-gray-300 rounded-lg overflow-hidden">
                     <div className="px-5 border-r border-gray-300 w-1/3">
                         <div className="border-b border-gray-300 -mx-5">
                             <div className="p-5">
@@ -60,12 +55,11 @@ const Messages = () => {
                         </div>
                     </div>
                     <div className="h-full flex justify-center items-center flex-col p-5 text-center w-2/3">
-                        <h3 className="font-semibold">Download Swapify for Windows</h3>
-                        <p className="text-gray-300">use the app for easier useage</p>
+                        <h3 className="font-bold text-slate-900 dark:text-slate-100 mb-2">Download Swapify for Windows</h3>
+                        <p className="text-slate-500 dark:text-slate-400">use the app for easier usage</p>
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 

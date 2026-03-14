@@ -1,6 +1,4 @@
 import { useState } from "react";
-import Nav from "../components/Nav"
-import Navigation from "../components/Navigation"
 
 import { IoEyeOutline } from "react-icons/io5";
 import { IoMdAdd } from "react-icons/io";
@@ -82,11 +80,7 @@ const Items = () => {
     ]
 
     return (
-        <div>
-            <Nav />
-            <div className='flex mt-14'>
-                <Navigation />
-                <div className="mx-auto w-7/10">
+        <div className="mx-auto w-7/10">
                     <div className="flex justify-between items-center my-5">
                         <div>
                             <h2 className="text-3xl font-bold my-2 text-slate-900 dark:text-slate-100">My Items</h2>
@@ -111,8 +105,6 @@ const Items = () => {
                             ))
                         }
                     </div>
-                </div>
-            </div>
         </div>
     )
 }

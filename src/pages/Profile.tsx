@@ -1,5 +1,4 @@
-import Nav from "../components/Nav"
-import Navigation from "../components/Navigation"
+
 import { IoLocationOutline } from "react-icons/io5";
 import { CiCalendar } from "react-icons/ci";
 import { CiStar } from "react-icons/ci";
@@ -10,11 +9,7 @@ const Profile = () => {
     let Tages = ["Top Trader", "Fast Responder", "Rated"]
 
     return (
-        <div>
-            <Nav />
-            <div className='flex mt-14'>
-                <Navigation />
-                <div className="mx-auto w-[70%]">
+        <div className="mx-auto w-[70%]">
                     <div className="h-fit p-6 my-5 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-xl flex gap-6 transition-colors shadow-sm">
                         <div className="w-1/12">
                             <div className="rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 w-20 h-20 flex items-center justify-center border border-slate-200 dark:border-slate-700">
@@ -78,8 +73,6 @@ const Profile = () => {
                     <p>add navigation here for the cards that you'll add</p>
                     <ItemCard />
                 </div>
-            </div>
-        </div>
     )
 }
 

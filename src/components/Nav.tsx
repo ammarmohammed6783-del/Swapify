@@ -23,7 +23,7 @@ function Nav() {
     };
 
     return (
-        <div className="fixed top-0 left-0 w-full h-14 shadow-sm border-b border-slate-200 dark:border-slate-800 px-4 flex justify-between items-center z-10 bg-white dark:bg-slate-950 transition-colors duration-300">
+        <div className="sticky top-0 left-0 w-full h-14 shadow-sm border-b border-slate-200 dark:border-slate-800 px-4 flex justify-between items-center z-50 bg-white dark:bg-slate-950 transition-colors duration-300">
             <div className="flex gap-3 items-center">
                 <p className="font-medium text-lg text-slate-900 dark:text-slate-100">Trade Hub</p>
                 <Link to="/signin">

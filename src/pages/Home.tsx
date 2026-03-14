@@ -1,6 +1,4 @@
 import Feed from "../components/Feed"
-import Nav from "../components/Nav"
-import Navigation from "../components/Navigation"
 
 const Home = () => {
 
@@ -12,11 +10,7 @@ const Home = () => {
 
     return (
         <div>
-            <Nav />
-            <div className='flex mt-14'>
-                <Navigation />
-                <Feed infos={info}/>
-            </div>
+            <Feed infos={info}/>
         </div>
     )
 }
