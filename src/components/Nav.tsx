@@ -10,16 +10,15 @@ function Nav() {
     const { theme, setTheme } = useThemeContext();
 
     const toggleTheme = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light');
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
     };
 
     const [searchTerm, setSearchTerm] = useState("");
 
-    // This function runs when the user submits the form
     const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault(); // prevent page reload
+        e.preventDefault();
         console.log("Searching for:", searchTerm);
-        // Here you can call a function to filter items, make API call, etc.
     };
 
     return (
@@ -46,7 +45,7 @@ function Nav() {
 
             <div className="flex items-center gap-4">
                 {
-                    theme === 'light' ? <LuMoon className="text-xl cursor-pointer text-slate-600 hover:text-slate-900 dark:text-slate-400" onClick={toggleTheme} /> : <TbBrightnessUp className="text-xl cursor-pointer text-slate-400 hover:text-slate-100" onClick={toggleTheme}/>
+                    theme === 'light' ? <LuMoon className="text-xl cursor-pointer text-slate-600 hover:text-slate-900 dark:text-slate-400" onClick={toggleTheme} /> : <TbBrightnessUp className="text-xl cursor-pointer text-slate-400 hover:text-slate-100" onClick={toggleTheme} />
                 }
                 <Link to="/items">
                     <button className="bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 flex items-center gap-2 rounded-lg py-1.5 px-3 transition-colors">
