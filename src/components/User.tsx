@@ -12,13 +12,15 @@ interface probs {
 
 function User({ element }: probs) {
     return (
-        <div className="rounded-lg py-3 hover:bg-gray-100 px-5 flex gap-3">
-            <div className="w-13">
-                <div className="rounded-full flex justify-center items-center bg-gray-300 w-10 h-10 text-sm">{element.photoName}</div>
+        <div className="rounded-xl p-3 hover:bg-slate-100 dark:hover:bg-slate-800/50 flex gap-3 cursor-pointer transition-colors border border-transparent hover:border-slate-200 dark:hover:border-slate-700">
+            <div className="flex-shrink-0">
+                <div className="rounded-full flex justify-center items-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 w-12 h-12 text-sm font-medium">
+                    {element.photoName}
+                </div>
             </div>
-            <div className="overflow-auto">
-                <h3>{element.userName}</h3>
-                <p className="text-sm text-gray-500">{element.message}</p>
+            <div className="overflow-hidden flex flex-col justify-center">
+                <h3 className="font-medium text-slate-900 dark:text-slate-100 truncate">{element.userName}</h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400 truncate">{element.message}</p>
             </div>
         </div>
     )
