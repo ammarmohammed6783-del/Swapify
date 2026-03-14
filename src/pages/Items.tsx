@@ -89,11 +89,11 @@ const Items = () => {
                 <div className="mx-auto w-7/10">
                     <div className="flex justify-between items-center my-5">
                         <div>
-                            <h2 className="text-3xl font-bold my-2">My Items</h2>
-                            <p className="text-gray-500">Manage your Listed items</p>
+                            <h2 className="text-3xl font-bold my-2 text-slate-900 dark:text-slate-100">My Items</h2>
+                            <p className="text-slate-500 dark:text-slate-400">Manage your Listed items</p>
                         </div>
-                        <button className="bg-black text-white px-4 py-2 rounded-lg h-10 flex items-center gap-2">
-                            <IoMdAdd /> Add New Item
+                        <button className="bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 px-4 py-2 rounded-lg h-10 flex items-center gap-2 transition-colors">
+                            <IoMdAdd className="text-current" /> Add New Item
                         </button>
                     </div>
                     <div className="flex">
@@ -126,9 +126,9 @@ type CardInfo = {
 
 function Card({ info }: { info: CardInfo }) {
     return (
-        <div className="rounded-lg p-5 m-1 border border-gray-300 w-full">
-            <p className="font-bold text-2xl">{info.value}</p>
-            <p>{info.text}</p>
+        <div className="rounded-xl p-5 m-1 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 w-full transition-colors">
+            <p className="font-bold text-2xl text-slate-900 dark:text-slate-100">{info.value}</p>
+            <p className="text-slate-600 dark:text-slate-400">{info.text}</p>
         </div>
     )
 }
@@ -159,42 +159,44 @@ function WideCard({ info }: WideCardInfo) {
     const { listing } = info;
 
     return (
-        <div className="p-5 flex items-center justify-between border border-gray-300 rounded-lg my-3">
+        <div className="p-5 flex items-center justify-between border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-xl my-4 transition-colors">
             <div className="flex gap-5 items-center">
-                <div className="w-35 h-35 rounded-lg bg-black"></div>
+                <div className="w-35 h-35 rounded-lg bg-slate-200 dark:bg-slate-800 flex-shrink-0"></div>
                 <div>
-                    <h3 className="font-medium">{listing.title}</h3>
-                    <div className="flex gap-3 my-1">
+                    <h3 className="font-medium text-lg text-slate-900 dark:text-slate-100">{listing.title}</h3>
+                    <div className="flex gap-3 my-2 text-sm">
                         {listing.tags.map((tag, index) => (
-                            <div key={index} className="border border-gray-300 rounded-lg w-fit px-2">
+                            <div key={index} className="border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg w-fit px-2 py-0.5">
                                 {tag}
                             </div>
                         ))}
-                        <p className="text-gray-500">{listing.postedAgo}</p>
+                        <p className="text-slate-500 dark:text-slate-400 flex items-center">{listing.postedAgo}</p>
                     </div>
-                    <div className="flex gap-3 items-center my-1">
-                        <p className="flex items-center gap-1 text-sm">
-                            <IoEyeOutline />
-                            <span className="font-bold">{listing.stats.views}</span>
-                            <span className="text-gray-500">views</span>
+                    <div className="flex gap-4 items-center my-3 text-slate-600 dark:text-slate-400">
+                        <p className="flex items-center gap-1.5 text-sm">
+                            <IoEyeOutline className="text-lg" />
+                            <span className="font-bold text-slate-900 dark:text-slate-100">{listing.stats.views}</span>
+                            <span>views</span>
                         </p>
-                        <p>
-                            <span className="font-bold">{listing.stats.offers}</span>{" "}
-                            <span className="text-gray-600">offers</span>
+                        <p className="text-sm">
+                            <span className="font-bold text-slate-900 dark:text-slate-100">{listing.stats.offers}</span>{" "}
+                            <span>offers</span>
                         </p>
                     </div>
                     <div className="flex gap-2">
                         {listing.actions.map((action, index) => (
-                            <button key={index} className="px-3 py-1 border border-gray-300 rounded-lg font-bold">
+                            <button key={index} className="px-3 py-1.5 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg font-medium text-sm transition-colors">
                                 {action}
                             </button>
                         ))}
                     </div>
                 </div>
             </div>
-            <div className="flex items-center gap-3 item self-start">
-                <button className="px-3 py-1 bg-black text-white rounded-lg">{listing.status}</button>
-                <BsThreeDots />
+            <div className="flex items-center gap-3 self-center">
+                <button className="px-3 py-1.5 bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 font-medium text-sm rounded-lg">{listing.status}</button>
+                <button className="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
+                    <BsThreeDots className="text-xl" />
+                </button>
             </div>
         </div>
     );

@@ -7,12 +7,15 @@ import { NavLink } from "react-router-dom";
 
 function Navigation() {
     return (
-        <div className="w-fit h-[calc(100vh-3.5rem)] p-3 flex flex-col gap-3 border-r-2 border-r-gray-100 bg-white sticky top-14">
+        <div className="w-fit h-[calc(100vh-3.5rem)] p-3 flex flex-col gap-3 border-r border-r-slate-200 dark:border-r-slate-800 bg-white dark:bg-slate-950 sticky top-14 transition-colors duration-300">
             <NavLink
                 to="/"
                 end
                 className={({ isActive }) =>
-                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 ${isActive ? "text-white bg-black" : "bg-white"
+                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 transition-colors ${
+                        isActive 
+                        ? "bg-slate-900 text-white dark:bg-slate-800 dark:text-white font-medium" 
+                        : "text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900"
                     }`
                 }
             >
@@ -22,7 +25,10 @@ function Navigation() {
             <NavLink
                 to="/explore"
                 className={({ isActive }) =>
-                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 ${isActive ? "text-white bg-black" : "bg-white"
+                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 transition-colors ${
+                        isActive 
+                        ? "bg-slate-900 text-white dark:bg-slate-800 dark:text-white font-medium" 
+                        : "text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900"
                     }`
                 }
             >
@@ -32,7 +38,10 @@ function Navigation() {
             <NavLink
                 to="/items"
                 className={({ isActive }) =>
-                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 ${isActive ? "text-white bg-black" : "bg-white"
+                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 transition-colors ${
+                        isActive 
+                        ? "bg-slate-900 text-white dark:bg-slate-800 dark:text-white font-medium" 
+                        : "text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900"
                     }`
                 }
             >
@@ -42,7 +51,10 @@ function Navigation() {
             <NavLink
                 to="/messages"
                 className={({ isActive }) =>
-                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 ${isActive ? "text-white bg-black" : "bg-white"
+                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 transition-colors ${
+                        isActive 
+                        ? "bg-slate-900 text-white dark:bg-slate-800 dark:text-white font-medium" 
+                        : "text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900"
                     }`
                 }
             >
@@ -52,25 +64,27 @@ function Navigation() {
             <NavLink
                 to="/profile"
                 className={({ isActive }) =>
-                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 ${isActive ? "text-white bg-black" : "bg-white"
+                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 transition-colors ${
+                        isActive 
+                        ? "bg-slate-900 text-white dark:bg-slate-800 dark:text-white font-medium" 
+                        : "text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900"
                     }`
                 }
             >
                 <IoPersonSharp /> Profile
             </NavLink>
-            <div className="bg-gray-200 w-full h-fit p-3 rounded-lg flex flex-col gap-3 my-15">
-                <h3 className="font-bold">Popular Categories</h3>
-                <div className="flex">
-                    <div>
-                        <p className="w-20">Electronics</p>
-                        <p className="w-20">Books</p>
-                        <p className="w-20">Furniture</p>
-
+            <div className="bg-slate-100 dark:bg-slate-900 w-full h-fit p-4 rounded-xl flex flex-col gap-3 my-15 transition-colors">
+                <h3 className="font-bold text-slate-900 dark:text-slate-100">Popular Categories</h3>
+                <div className="flex text-sm text-slate-600 dark:text-slate-400 gap-4">
+                    <div className="flex flex-col gap-2">
+                        <p className="w-20 hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer transition-colors">Electronics</p>
+                        <p className="w-20 hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer transition-colors">Books</p>
+                        <p className="w-20 hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer transition-colors">Furniture</p>
                     </div>
-                    <div>
-                        <p className="w-20">Clothing</p>
-                        <p className="w-20">Sports</p>
-                        <p className="w-20">Tools</p>
+                    <div className="flex flex-col gap-2">
+                        <p className="w-20 hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer transition-colors">Clothing</p>
+                        <p className="w-20 hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer transition-colors">Sports</p>
+                        <p className="w-20 hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer transition-colors">Tools</p>
                     </div>
                 </div>
             </div>

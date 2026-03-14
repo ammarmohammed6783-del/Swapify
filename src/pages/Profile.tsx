@@ -15,52 +15,56 @@ const Profile = () => {
             <div className='flex mt-14'>
                 <Navigation />
                 <div className="mx-auto w-[70%]">
-                    <div className="h-fit p-5 my-5 border border-gray-200 rounded-lg flex gap-5">
+                    <div className="h-fit p-6 my-5 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-xl flex gap-6 transition-colors shadow-sm">
                         <div className="w-1/12">
-                            <div className="rounded-full bg-gray-200 w-20 h-20 flex items-center justify-center">
-                                <span className="text-lg">AM</span>
+                            <div className="rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 w-20 h-20 flex items-center justify-center border border-slate-200 dark:border-slate-700">
+                                <span className="text-xl font-medium">AM</span>
                             </div>
                         </div>
                         <div className="w-full">
-                            <div className="flex justify-between">
-                                <h1 className="text-2xl font-semibold">Ammar Mohammed</h1>
-                                <button className="bg-black text-white px-3 py-1 rounded-lg h-10 flex items-center gap-1">
-                                    <CiSettings size={20} /> Add New Item
+                            <div className="flex justify-between items-start">
+                                <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Ammar Mohammed</h1>
+                                <button className="bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 px-4 py-2 rounded-lg h-10 flex items-center gap-2 transition-colors font-medium text-sm">
+                                    <CiSettings className="text-xl" /> Edit Profile
                                 </button>
                             </div>
-                            <p className="flex items-center gap-2">
-                                <IoLocationOutline />
-                                <span className="text-gray-500">Spain</span>
-                            </p>
+                            <div className="flex gap-4 mt-2">
+                                <p className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                                    <IoLocationOutline className="text-lg" />
+                                    <span>Spain</span>
+                                </p>
 
-                            <p className="flex items-center gap-2">
-                                <CiCalendar />
-                                <span className="text-gray-500">member since jan 2020</span>
-                            </p>
-                            <div className="flex items-center justify-between w-full my-3">
-                                <div className="w-1/4">
-                                    <h3 className="font-bold text-lg">24</h3>
-                                    <p className="text-gray-500 text-sm">Total Trades</p>
+                                <p className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                                    <CiCalendar className="text-lg" />
+                                    <span>member since Jan 2020</span>
+                                </p>
+                            </div>
+                            
+                            <div className="flex items-center justify-between w-full my-6 bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-800 transition-colors">
+                                <div className="w-1/4 text-center border-r border-slate-200 dark:border-slate-700">
+                                    <h3 className="font-bold text-xl text-slate-900 dark:text-slate-100">24</h3>
+                                    <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">Total Trades</p>
                                 </div>
-                                <div className="w-1/4">
-                                    <div className="flex items-center gap-1 text-center">
-                                        <CiStar color="#fbbf24" size={24} />
-                                        <h3 className="font-bold text-lg">4.7</h3>
+                                <div className="w-1/4 text-center border-r border-slate-200 dark:border-slate-700">
+                                    <div className="flex items-center justify-center gap-1">
+                                        <CiStar className="text-amber-400 text-xl" />
+                                        <h3 className="font-bold text-xl text-slate-900 dark:text-slate-100">4.7</h3>
                                     </div>
-                                    <p className="text-gray-500 text-sm">Rating</p>
+                                    <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">Rating</p>
                                 </div>
-                                <div className="w-1/4">
-                                    <h3 className="font-bold text-lg">97%</h3>
-                                    <p className="text-gray-500 text-sm">Success Rate</p>
+                                <div className="w-1/4 text-center border-r border-slate-200 dark:border-slate-700">
+                                    <h3 className="font-bold text-xl text-slate-900 dark:text-slate-100">97%</h3>
+                                    <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">Success Rate</p>
                                 </div>
-                                <div className="w-1/4">
+                                <div className="w-1/4 text-center flex flex-col items-center">
                                     <Tag text="Verified" />
-                                    <p className="text-gray-500 text-sm">Status</p>
+                                    <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">Status</p>
                                 </div>
                             </div>
-                            <div className="my-3">
-                                <h3 className="font-semibold my-2">About</h3>
-                                <p className="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, ipsam cum provident corporis eligendi dicta! Sapiente officiis earum odit facilis, Lorem ipsum dolor sit amet.</p>
+                            
+                            <div className="my-5">
+                                <h3 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">About</h3>
+                                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, ipsam cum provident corporis eligendi dicta! Sapiente officiis earum odit facilis, Lorem ipsum dolor sit amet.</p>
                             </div>
                             <div className="flex gap-2">
                                 {
@@ -83,31 +87,38 @@ export default Profile
 
 function Tag({ text }: { text: string }) {
     return (
-        <div className="p-1 px-2 bg-gray-200 rounded-lg w-fit text-sm font-semibold">{text}</div>
+        <div className="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 rounded-lg w-fit text-sm font-medium transition-colors">{text}</div>
     )
 }
 
 function ItemCard() {
     return (
-        <div className="border border-gray-200 p-5 my-3 rounded-lg flex items-center justify-between gap-4 h-30">
-            <div className="flex gap-4 items-center">
-                <div className="w-20 h-20 rounded-lg bg-black"></div>
+        <div className="border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 my-4 rounded-xl flex items-center justify-between gap-4 transition-colors">
+            <div className="flex gap-5 items-center">
+                <div className="w-24 h-24 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex-shrink-0"></div>
                 <div>
-                    <h3 className="font-semibold">vintage film camera</h3>
-                    <p className="text-gray-600">traded with sarah chen</p>
-                    <p className="text-gray-600">traded for: <span className="font-semibold">professional camera lens</span></p>
-                    <p className="text-gray-600">2 weeks ago</p>
+                    <h3 className="font-bold text-slate-900 dark:text-slate-100 text-lg">vintage film camera</h3>
+                    <div className="space-y-1 mt-1">
+                        <p className="text-slate-500 dark:text-slate-400 text-sm flex items-center gap-2">
+                            <span>Traded with</span>
+                            <span className="font-medium text-slate-700 dark:text-slate-300">Sarah Chen</span>
+                        </p>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm flex items-center gap-2">
+                            <span>Traded for</span>
+                            <span className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-700 dark:text-slate-300 font-medium">professional camera lens</span>
+                        </p>
+                        <p className="text-slate-400 dark:text-slate-500 text-xs mt-2">2 weeks ago</p>
+                    </div>
                 </div>
             </div>
-            <div className="flex flex-col justify-between h-full">
-                <div className="border border-gray-300 px-1 rounded-lg">completed</div>
-                <div className="flex">
-                    <CiStar className="text-yellow-400" />
-                    <CiStar className="text-yellow-400" />
-                    <CiStar className="text-yellow-400" />
-                    <CiStar className="text-yellow-400" />
-                    <CiStar className="text-yellow-400" />
-                    <CiStar className="text-yellow-400" />
+            <div className="flex flex-col justify-between items-end h-full gap-6">
+                <div className="border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">completed</div>
+                <div className="flex gap-1">
+                    <CiStar className="text-amber-400 text-xl" />
+                    <CiStar className="text-amber-400 text-xl" />
+                    <CiStar className="text-amber-400 text-xl" />
+                    <CiStar className="text-amber-400 text-xl" />
+                    <CiStar className="text-amber-400 text-xl" />
                 </div>
             </div>
         </div>

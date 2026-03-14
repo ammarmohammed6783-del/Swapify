@@ -23,21 +23,21 @@ function Nav() {
     };
 
     return (
-        <div className="fixed top-0 left-0 w-full h-14 shadow px-4 flex justify-between items-center z-10   bg-white text-black dark:bg-black dark:text-white">
+        <div className="fixed top-0 left-0 w-full h-14 shadow-sm border-b border-slate-200 dark:border-slate-800 px-4 flex justify-between items-center z-10 bg-white dark:bg-slate-950 transition-colors duration-300">
             <div className="flex gap-3 items-center">
-                <p className="font-medium text-lg">Trade Hub</p>
+                <p className="font-medium text-lg text-slate-900 dark:text-slate-100">Trade Hub</p>
                 <Link to="/signin">
-                    <button className="bg-black text-white flex items-center gap-2 rounded py-1 px-2">Sign up</button>
+                    <button className="bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 flex items-center gap-2 rounded-lg py-1 px-3 transition-colors">Sign up</button>
                 </Link>
             </div>
             <form
                 onSubmit={handleSearch}
-                className="flex items-center bg-gray-100 rounded px-2 py-1 gap-2 w-1/2"
+                className="flex items-center bg-slate-100 dark:bg-slate-900 rounded-lg px-3 py-1.5 gap-2 w-1/2 border border-transparent focus-within:border-slate-300 dark:focus-within:border-slate-700 transition-colors"
             >
-                <IoIosSearch className="text-gray-400" />
+                <IoIosSearch className="text-slate-500 dark:text-slate-400" />
                 <input
                     type="text"
-                    className="bg-transparent outline-none flex-1" // <-- flex-1 makes it take remaining space
+                    className="bg-transparent outline-none flex-1 text-slate-900 dark:text-slate-100 placeholder-slate-500 dark:placeholder-slate-400" // <-- flex-1 makes it take remaining space
                     placeholder="Search Item..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
@@ -46,11 +46,11 @@ function Nav() {
 
             <div className="flex items-center gap-4">
                 {
-                    theme === 'light' ? <LuMoon className="text-xl cursor-pointer" onClick={toggleTheme} /> : <TbBrightnessUp className="text-xl cursor-pointer" onClick={toggleTheme}/>
+                    theme === 'light' ? <LuMoon className="text-xl cursor-pointer text-slate-600 hover:text-slate-900 dark:text-slate-400" onClick={toggleTheme} /> : <TbBrightnessUp className="text-xl cursor-pointer text-slate-400 hover:text-slate-100" onClick={toggleTheme}/>
                 }
                 <Link to="/items">
-                    <button className="bg-black text-white flex items-center gap-2 rounded py-1 px-2">
-                        <IoMdAdd className="text-white" />
+                    <button className="bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 flex items-center gap-2 rounded-lg py-1.5 px-3 transition-colors">
+                        <IoMdAdd className="text-current" />
                         List Item
                     </button>
                 </Link>
