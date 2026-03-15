@@ -19,9 +19,14 @@ const Profile = () => {
                         <div className="w-full">
                             <div className="flex justify-between items-start">
                                 <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Ammar Mohammed</h1>
-                                <button className="bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 px-4 py-2 rounded-lg h-10 flex items-center gap-2 transition-colors font-medium text-sm">
-                                    <CiSettings className="text-xl" /> Edit Profile
-                                </button>
+                                <div className="flex gap-3">
+                                    <button className="bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 px-4 py-2 rounded-lg h-10 flex items-center gap-2 transition-colors font-medium text-sm">
+                                        <CiSettings className="text-xl" /> Edit Profile
+                                    </button>
+                                    <button className="text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 bg-red-50 hover:bg-red-100 dark:bg-red-950/30 dark:hover:bg-red-900/40 px-4 py-2 rounded-lg h-10 flex items-center gap-2 transition-colors font-medium text-sm border border-red-200 dark:border-red-800/50">
+                                        Log Out
+                                    </button>
+                                </div>
                             </div>
                             <div className="flex gap-4 mt-2">
                                 <p className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
