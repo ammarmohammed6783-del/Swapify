@@ -6,6 +6,7 @@ import Items from './pages/Items'
 import Messages from './pages/Messages'
 import Profile from './pages/Profile'
 import SignIn from './pages/SignIn'
+import LogIn from './pages/LogIn'
 import Layout from './components/Layout'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='profile' element={<Profile />} />
       </Route>
       <Route path='/signIn' element={<SignIn />} />
+      <Route path='/login' element={<LogIn />} />
     </Routes>
   )
 }
