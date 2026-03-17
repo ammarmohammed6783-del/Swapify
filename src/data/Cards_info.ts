@@ -21,6 +21,13 @@ const Cards: Card[] = [
         place: "Cairo",
         interests: ["electronics", "tools", "toys", "clothing", "music"]
     },
+    {
+        imgSrc: "",
+        header3: "glasses",
+        paragraph: "very high quality glasses, like new",
+        place: "san fransisco",
+        interests: ["toys", "clothing", "music", "football"]
+    },
 ];
 
 export default Cards;

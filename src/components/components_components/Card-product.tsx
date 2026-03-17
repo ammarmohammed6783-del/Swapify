@@ -17,7 +17,7 @@ const Card = ({ data }: { data: CardType }) => {
                 className="bg-slate-200 dark:bg-slate-800 w-full h-50 object-cover"
             />
 
-            <div className="p-4">
+            <div className="p-4 h-75 flex flex-col">
                 <h3 className="font-bold text-slate-900 dark:text-slate-100 text-lg">
                     {data.header3}
                 </h3>
@@ -41,7 +41,7 @@ const Card = ({ data }: { data: CardType }) => {
                     ))}
                 </div>
 
-                <button className="w-full justify-center bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 flex items-center gap-2 rounded-lg py-2 px-3 mt-4 transition-colors font-medium">
+                <button className="w-full text-center mt-auto bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 gap-2 rounded-lg py-2 px-3 transition-colors font-medium">
                     Propose Trade
                 </button>
             </div>
