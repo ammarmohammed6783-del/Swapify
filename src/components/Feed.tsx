@@ -3,6 +3,7 @@ import Card from "./components_components/Card-product"
 import Category from "./components_components/Category"
 import Description from "./components_components/Description"
 import Ready from "./components_components/Ready"
+import cards from "../data/Cards_info";
 
 interface FeedProps {
     infos: {
@@ -45,7 +46,11 @@ function Feed({ infos, children, showDescription = true }: FeedProps) {
 
                 {/* Featured Cards */}
                 <div className="flex gap-3">
-                    <Card /><Card /><Card /><Card />
+                    {
+                        cards.map((ele, index) => (
+                            <Card key={index} data={ele}/>
+                        ))
+                    }
                 </div>
             </div>
 
@@ -53,7 +58,7 @@ function Feed({ infos, children, showDescription = true }: FeedProps) {
             <div>
                 <h2 className="text-2xl font-medium my-5">Recently Added</h2>
                 <div className="flex gap-3">
-                    <Card /><Card /><Card /><Card />
+
                 </div>
             </div>
 
