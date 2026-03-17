@@ -48,7 +48,7 @@ function Feed({ infos, children, showDescription = true }: FeedProps) {
                 <div className="flex gap-3">
                     {
                         cards.map((ele, index) => (
-                            <Card key={index} data={ele}/>
+                            <Card key={index} data={ele} />
                         ))
                     }
                 </div>
@@ -58,7 +58,11 @@ function Feed({ infos, children, showDescription = true }: FeedProps) {
             <div>
                 <h2 className="text-2xl font-medium my-5">Recently Added</h2>
                 <div className="flex gap-3">
-
+                    {
+                        cards.map((ele, index) => (
+                            <Card key={index} data={ele} />
+                        ))
+                    }
                 </div>
             </div>
 
