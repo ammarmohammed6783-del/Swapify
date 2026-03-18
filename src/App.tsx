@@ -9,6 +9,7 @@ import SignIn from './pages/SignIn'
 import LogIn from './pages/LogIn'
 import Layout from './components/Layout'
 import AddItem from './pages/AddItem'
+import HowItWork from './pages/HowItWork'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path='/signIn' element={<SignIn />} />
       <Route path='/login' element={<LogIn />} />
       <Route path='/addItem' element={<AddItem />} />
+      <Route path='/description' element={<HowItWork />} />
     </Routes>
   )
 }
