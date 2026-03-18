@@ -51,8 +51,8 @@ function SignIn() {
                     
                     <div className="w-full mt-2 text-center text-sm text-slate-600 dark:text-slate-400">
                         Already have an account?{" "}
-                        <Link to="/login" className="font-semibold text-slate-900 dark:text-slate-100 hover:underline transition-all">
-                            Log in
+                        <Link to="/signIn" className="font-semibold text-slate-900 dark:text-slate-100 hover:underline transition-all">
+                            sign in
                         </Link>
                     </div>
                 </div>
