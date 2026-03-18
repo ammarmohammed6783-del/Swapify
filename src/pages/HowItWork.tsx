@@ -22,7 +22,7 @@ function HowItWork() {
             <div className="h-full rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900 sm:p-6 lg:p-8 overflow-hidden">
                 <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr] items-start">
                     <div>
-                        <p className="inline-flex rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300">How Swapify Works</p>
+                        <p className="inline-flex rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-gray-600 dark:bg-indigo-900/30 dark:text-indigo-300">How Swapify Works</p>
                         <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl">Swap products faster with simple steps</h1>
                         <p className="mt-3 text-slate-600 dark:text-slate-300">This page shows exactly how you can trade items, connect with buyers, and manage your listings easily. Keep your swaps smooth, transparent, and safe.</p>
 
@@ -36,7 +36,7 @@ function HowItWork() {
                         </div>
                     </div>
 
-                    <div className="rounded-2xl bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 p-4 text-white shadow-lg">
+                    <div className="rounded-2xl bg-linear-to-br from-slate-800 via-slate-700 to-slate-900 p-4 text-white shadow-lg">
                         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">Ready to trade?</p>
                         <h2 className="mt-2 text-2xl font-bold">Start your first swap today</h2>
                         <p className="mt-3 text-sm text-slate-100/90">Create a listing in minutes and connect with members with secure chat and clear swap terms.</p>
@@ -51,7 +51,7 @@ function HowItWork() {
                     <div className="mt-4 grid gap-3 md:grid-cols-3">
                         {steps.map((step) => (
                             <div key={step.title} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:border-indigo-300 dark:border-slate-700 dark:bg-slate-800">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 text-xl dark:bg-indigo-800">{step.icon}</div>
+                                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-xl dark:bg-gray-200">{step.icon}</div>
                                 <p className="mt-3 text-sm font-semibold text-slate-900 dark:text-white">{step.title}</p>
                                 <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">{step.description}</p>
                             </div>
@@ -59,7 +59,7 @@ function HowItWork() {
                     </div>
                 </div>
 
-                <div className="mt-10 rounded-2xl border border-indigo-100 bg-indigo-50 p-4 text-slate-700 dark:border-indigo-900/50 dark:bg-indigo-950/40 dark:text-indigo-100">
+                <div className="mt-10 rounded-2xl border border-indigo-100 bg-gray-100 p-4 text-slate-700 dark:border-indigo-900/50 dark:bg-indigo-950/40 dark:text-indigo-100">
                     <p className="font-semibold">Need help?</p>
                     <p className="mt-1 text-sm">Visit the Items page to add your first listing, and use Messages to reply to interested members directly.</p>
                 </div>
