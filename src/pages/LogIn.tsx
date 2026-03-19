@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 function SignIn() {
     return (
         <div>
-            <div className="h-[calc(100vh-3.5rem)] py-8 flex items-center justify-center -mt-8">
-                <div className="w-[90%] max-w-[420px] h-auto p-10 m-auto flex flex-col items-center gap-6 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl shadow-slate-200/50 dark:shadow-slate-900/50 rounded-2xl transition-all">
+            <div className="h-screen py-8 flex items-center justify-center">
+                <div className="w-[90%] max-w-105 h-auto p-10 m-auto flex flex-col items-center gap-6 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl shadow-slate-200/50 dark:shadow-slate-900/50 rounded-2xl transition-all">
                     <div className="text-center space-y-2">
                         <h1 className="text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">Create an Account</h1>
                         <p className="text-slate-500 dark:text-slate-400 text-sm">Join Trade Hub and start swapping today</p>
