@@ -76,15 +76,46 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-            <Tabs defaultValue="account" className="w-[400px]">
-                <TabsList>
-                    <TabsTrigger value="account">Account</TabsTrigger>
-                    <TabsTrigger value="password">Password</TabsTrigger>
+            
+            <Tabs defaultValue="history" className="w-full mt-8">
+                <TabsList className="w-full h-14 bg-slate-100/60 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800/60 p-1.5 rounded-2xl mb-8 shadow-inner transition-colors">
+                    <TabsTrigger 
+                        value="history" 
+                        className="w-full h-full text-[15px] font-semibold rounded-xl text-slate-600 dark:text-slate-400 data-[state=active]:bg-white dark:data-[state=active]:bg-slate-800 data-[state=active]:text-slate-900 dark:data-[state=active]:text-slate-100 data-[state=active]:shadow-sm hover:text-slate-900 dark:hover:text-slate-200 transition-all duration-300"
+                    >
+                        Trade History
+                    </TabsTrigger>
+                    <TabsTrigger 
+                        value="reviews" 
+                        className="w-full h-full text-[15px] font-semibold rounded-xl text-slate-600 dark:text-slate-400 data-[state=active]:bg-white dark:data-[state=active]:bg-slate-800 data-[state=active]:text-slate-900 dark:data-[state=active]:text-slate-100 data-[state=active]:shadow-sm hover:text-slate-900 dark:hover:text-slate-200 transition-all duration-300"
+                    >
+                        Reviews
+                    </TabsTrigger>
+                    <TabsTrigger 
+                        value="settings" 
+                        className="w-full h-full text-[15px] font-semibold rounded-xl text-slate-600 dark:text-slate-400 data-[state=active]:bg-white dark:data-[state=active]:bg-slate-800 data-[state=active]:text-slate-900 dark:data-[state=active]:text-slate-100 data-[state=active]:shadow-sm hover:text-slate-900 dark:hover:text-slate-200 transition-all duration-300"
+                    >
+                        Settings
+                    </TabsTrigger>
                 </TabsList>
-                <TabsContent value="account">Make changes to your account here.</TabsContent>
-                <TabsContent value="password">Change your password here.</TabsContent>
+                
+                <TabsContent value="history" className="space-y-4 focus-visible:outline-none focus-visible:ring-0 animate-in slide-in-from-bottom-4 fade-in-0 duration-500 ease-out">
+                    <ItemCard />
+                    <ItemCard />
+                </TabsContent>
+                
+                <TabsContent value="reviews" className="p-8 text-center border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 min-h-[300px] flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 focus-visible:outline-none focus-visible:ring-0 animate-in slide-in-from-bottom-4 fade-in-0 duration-500 ease-out">
+                    <CiStar className="text-4xl text-slate-300 dark:text-slate-700 mb-3 animate-pulse" />
+                    <p className="text-lg font-medium text-slate-700 dark:text-slate-300">No reviews yet</p>
+                    <p className="text-sm mt-1">Complete a trade to start earning reviews.</p>
+                </TabsContent>
+                
+                <TabsContent value="settings" className="p-8 text-center border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 min-h-[300px] flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 focus-visible:outline-none focus-visible:ring-0 animate-in slide-in-from-bottom-4 fade-in-0 duration-500 ease-out">
+                    <CiSettings className="text-4xl text-slate-300 dark:text-slate-700 mb-3 transition-transform duration-700 hover:rotate-180" />
+                    <p className="text-lg font-medium text-slate-700 dark:text-slate-300">Account Settings</p>
+                    <p className="text-sm mt-1">Manage your preferences and notifications.</p>
+                </TabsContent>
             </Tabs>
-            <ItemCard />
         </div>
     )
 }
@@ -93,33 +124,33 @@ export default Profile
 
 function Tag({ text }: { text: string }) {
     return (
-        <div className="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 rounded-lg w-fit text-sm font-medium transition-colors">{text}</div>
+        <div className="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 rounded-lg w-fit text-sm font-medium transition-colors hover:bg-slate-200 dark:hover:bg-slate-700 cursor-default">{text}</div>
     )
 }
 
 function ItemCard() {
     return (
-        <div className="border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 my-4 rounded-xl flex items-center justify-between gap-4 transition-colors">
+        <div className="group border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 my-4 rounded-xl flex items-center justify-between gap-4 transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/50 dark:hover:shadow-slate-900/50 hover:-translate-y-1 hover:border-slate-300 dark:hover:border-slate-700 cursor-pointer">
             <div className="flex gap-5 items-center">
-                <div className="w-24 h-24 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex-shrink-0"></div>
+                <div className="w-24 h-24 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex-shrink-0 transition-transform duration-500 group-hover:scale-105"></div>
                 <div>
-                    <h3 className="font-bold text-slate-900 dark:text-slate-100 text-lg">vintage film camera</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-slate-100 text-lg transition-colors group-hover:text-slate-700 dark:group-hover:text-slate-300">vintage film camera</h3>
                     <div className="space-y-1 mt-1">
                         <p className="text-slate-500 dark:text-slate-400 text-sm flex items-center gap-2">
                             <span>Traded with</span>
-                            <span className="font-medium text-slate-700 dark:text-slate-300">Sarah Chen</span>
+                            <span className="font-medium text-slate-700 dark:text-slate-300 transition-colors">Sarah Chen</span>
                         </p>
                         <p className="text-slate-500 dark:text-slate-400 text-sm flex items-center gap-2">
                             <span>Traded for</span>
-                            <span className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-700 dark:text-slate-300 font-medium">professional camera lens</span>
+                            <span className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-700 dark:text-slate-300 font-medium transition-colors group-hover:bg-slate-200 dark:group-hover:bg-slate-700">professional camera lens</span>
                         </p>
                         <p className="text-slate-400 dark:text-slate-500 text-xs mt-2">2 weeks ago</p>
                     </div>
                 </div>
             </div>
             <div className="flex flex-col justify-between items-end h-full gap-6">
-                <div className="border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">completed</div>
-                <div className="flex gap-1">
+                <div className="border border-emerald-200 dark:border-emerald-800/80 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 group-hover:bg-emerald-100 animate-in fade-in zoom-in duration-500">completed</div>
+                <div className="flex gap-1 transition-transform duration-300 group-hover:scale-110">
                     <CiStar className="text-amber-400 text-xl" />
                     <CiStar className="text-amber-400 text-xl" />
                     <CiStar className="text-amber-400 text-xl" />
