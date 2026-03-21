@@ -89,7 +89,7 @@ const Profile = () => {
                         value="reviews" 
                         className="w-full h-full text-[15px] font-semibold rounded-xl text-slate-600 dark:text-slate-400 data-[state=active]:bg-white dark:data-[state=active]:bg-slate-800 data-[state=active]:text-slate-900 dark:data-[state=active]:text-slate-100 data-[state=active]:shadow-sm hover:text-slate-900 dark:hover:text-slate-200 transition-all duration-300"
                     >
-                        Reviews
+                        Reviews <span></span>
                     </TabsTrigger>
                     <TabsTrigger 
                         value="settings" 
@@ -100,6 +100,7 @@ const Profile = () => {
                 </TabsList>
                 
                 <TabsContent value="history" className="space-y-4 focus-visible:outline-none focus-visible:ring-0 animate-in slide-in-from-bottom-4 fade-in-0 duration-500 ease-out">
+                    {/* when there are real data make map and put the number of those itemCard in the span that besides reviews */}
                     <ItemCard />
                     <ItemCard />
                 </TabsContent>
