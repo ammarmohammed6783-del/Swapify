@@ -32,7 +32,7 @@ const Profile = () => {
                     <div className="flex gap-4 mt-2">
                         <p className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
                             <IoLocationOutline className="text-lg" />
-                            <span>Spain</span>
+                            <span>Egypt</span>
                         </p>
 
                         <p className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
