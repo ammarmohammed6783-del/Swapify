@@ -10,6 +10,7 @@ import LogIn from './pages/LogIn'
 import Layout from './components/Layout'
 import AddItem from './pages/AddItem'
 import HowItWork from './pages/HowItWork'
+import Settings from './pages/Settings'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='items' element={<Items />} />
         <Route path='messages' element={<Messages />} />
         <Route path='profile' element={<Profile />} />
+        <Route path='settings' element={<Settings />} />
       </Route>
       <Route path='/signIn' element={<SignIn />} />
       <Route path='/login' element={<LogIn />} />
