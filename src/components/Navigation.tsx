@@ -12,9 +12,8 @@ function Navigation() {
                 to="/"
                 end
                 className={({ isActive }) =>
-                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 transition-colors ${
-                        isActive 
-                        ? "bg-slate-900 text-white dark:bg-slate-800 dark:text-white font-medium" 
+                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 transition-colors ${isActive
+                        ? "bg-slate-900 text-white dark:bg-slate-800 dark:text-white font-medium"
                         : "text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900"
                     }`
                 }
@@ -25,9 +24,8 @@ function Navigation() {
             <NavLink
                 to="/explore"
                 className={({ isActive }) =>
-                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 transition-colors ${
-                        isActive 
-                        ? "bg-slate-900 text-white dark:bg-slate-800 dark:text-white font-medium" 
+                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 transition-colors ${isActive
+                        ? "bg-slate-900 text-white dark:bg-slate-800 dark:text-white font-medium"
                         : "text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900"
                     }`
                 }
@@ -38,9 +36,8 @@ function Navigation() {
             <NavLink
                 to="/items"
                 className={({ isActive }) =>
-                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 transition-colors ${
-                        isActive 
-                        ? "bg-slate-900 text-white dark:bg-slate-800 dark:text-white font-medium" 
+                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 transition-colors ${isActive
+                        ? "bg-slate-900 text-white dark:bg-slate-800 dark:text-white font-medium"
                         : "text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900"
                     }`
                 }
@@ -51,9 +48,8 @@ function Navigation() {
             <NavLink
                 to="/messages"
                 className={({ isActive }) =>
-                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 transition-colors ${
-                        isActive 
-                        ? "bg-slate-900 text-white dark:bg-slate-800 dark:text-white font-medium" 
+                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 transition-colors ${isActive
+                        ? "bg-slate-900 text-white dark:bg-slate-800 dark:text-white font-medium"
                         : "text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900"
                     }`
                 }
@@ -64,14 +60,24 @@ function Navigation() {
             <NavLink
                 to="/profile"
                 className={({ isActive }) =>
-                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 transition-colors ${
-                        isActive 
-                        ? "bg-slate-900 text-white dark:bg-slate-800 dark:text-white font-medium" 
+                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 transition-colors ${isActive
+                        ? "bg-slate-900 text-white dark:bg-slate-800 dark:text-white font-medium"
                         : "text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900"
                     }`
                 }
             >
                 <IoPersonSharp /> Profile
+            </NavLink>
+            <NavLink
+                to="/settings"
+                className={({ isActive }) =>
+                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 transition-colors ${isActive
+                        ? "bg-slate-900 text-white dark:bg-slate-800 dark:text-white font-medium"
+                        : "text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900"
+                    }`
+                }
+            >
+                <IoPersonSharp /> settings
             </NavLink>
             <div className="bg-slate-100 dark:bg-slate-900 w-full h-fit p-4 rounded-xl flex flex-col gap-3 my-15 transition-colors">
                 <h3 className="font-bold text-slate-900 dark:text-slate-100">Popular Categories</h3>
