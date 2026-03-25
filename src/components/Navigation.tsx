@@ -2,8 +2,9 @@ import { AiFillHome } from "react-icons/ai";
 import { MdOutlineExplore } from "react-icons/md";
 import { FiBox } from "react-icons/fi";
 import { FiMessageCircle } from "react-icons/fi";
-import { IoPersonSharp } from "react-icons/io5";
+import { IoPersonOutline } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
+import { CiSettings } from "react-icons/ci";
 
 function Navigation() {
     return (
@@ -66,7 +67,7 @@ function Navigation() {
                     }`
                 }
             >
-                <IoPersonSharp /> Profile
+                <IoPersonOutline /> Profile
             </NavLink>
             <NavLink
                 to="/settings"
@@ -77,7 +78,7 @@ function Navigation() {
                     }`
                 }
             >
-                <IoPersonSharp /> settings
+                <CiSettings /> settings
             </NavLink>
             <div className="bg-slate-100 dark:bg-slate-900 w-full h-fit p-4 rounded-xl flex flex-col gap-3 my-15 transition-colors">
                 <h3 className="font-bold text-slate-900 dark:text-slate-100">Popular Categories</h3>
