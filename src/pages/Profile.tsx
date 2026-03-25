@@ -105,13 +105,13 @@ const Profile = () => {
                     <ItemCard />
                 </TabsContent>
                 
-                <TabsContent value="reviews" className="p-8 text-center border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 min-h-[300px] flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 focus-visible:outline-none focus-visible:ring-0 animate-in slide-in-from-bottom-4 fade-in-0 duration-500 ease-out">
+                <TabsContent value="reviews" className="p-8 text-center border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 min-h-75 flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 focus-visible:outline-none focus-visible:ring-0 animate-in slide-in-from-bottom-4 fade-in-0 duration-500 ease-out">
                     <CiStar className="text-4xl text-slate-300 dark:text-slate-700 mb-3 animate-pulse" />
                     <p className="text-lg font-medium text-slate-700 dark:text-slate-300">No reviews yet</p>
                     <p className="text-sm mt-1">Complete a trade to start earning reviews.</p>
                 </TabsContent>
                 
-                <TabsContent value="settings" className="p-8 text-center border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 min-h-[300px] flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 focus-visible:outline-none focus-visible:ring-0 animate-in slide-in-from-bottom-4 fade-in-0 duration-500 ease-out">
+                <TabsContent value="settings" className="p-8 text-center border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 min-h-75 flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 focus-visible:outline-none focus-visible:ring-0 animate-in slide-in-from-bottom-4 fade-in-0 duration-500 ease-out">
                     <CiSettings className="text-4xl text-slate-300 dark:text-slate-700 mb-3 transition-transform duration-700 hover:rotate-180" />
                     <p className="text-lg font-medium text-slate-700 dark:text-slate-300">Account Settings</p>
                     <p className="text-sm mt-1">Manage your preferences and notifications.</p>
@@ -133,7 +133,7 @@ function ItemCard() {
     return (
         <div className="group border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 my-4 rounded-xl flex items-center justify-between gap-4 transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/50 dark:hover:shadow-slate-900/50 hover:-translate-y-1 hover:border-slate-300 dark:hover:border-slate-700 cursor-pointer">
             <div className="flex gap-5 items-center">
-                <div className="w-24 h-24 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex-shrink-0 transition-transform duration-500 group-hover:scale-105"></div>
+                <div className="w-24 h-24 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex-0 transition-transform duration-500 group-hover:scale-105"></div>
                 <div>
                     <h3 className="font-bold text-slate-900 dark:text-slate-100 text-lg transition-colors group-hover:text-slate-700 dark:group-hover:text-slate-300">vintage film camera</h3>
                     <div className="space-y-1 mt-1">
@@ -150,7 +150,7 @@ function ItemCard() {
                 </div>
             </div>
             <div className="flex flex-col justify-between items-end h-full gap-6">
-                <div className="border border-emerald-200 dark:border-emerald-800/80 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 group-hover:bg-emerald-100 animate-in fade-in zoom-in duration-500">completed</div>
+                <div className="border border-emerald-200 dark:border-emerald-800/80 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all group-hover:bg-emerald-100 animate-in fade-in zoom-in duration-500">completed</div>
                 <div className="flex gap-1 transition-transform duration-300 group-hover:scale-110">
                     <CiStar className="text-amber-400 text-xl" />
                     <CiStar className="text-amber-400 text-xl" />
