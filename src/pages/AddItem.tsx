@@ -29,20 +29,31 @@ function AddItem() {
                 <input
                     type="text"
                     placeholder="Enter the title"
-                    className="rounded-2xl border-2 px-2 py-1"
+                    className="rounded-md border-2 px-2 py-1"
                 />
 
                 <input
                     type="text"
                     placeholder="Enter the description"
-                    className="rounded-2xl border-2 px-2 py-1"
+                    className="rounded-md border-2 px-2 py-1"
                 />
 
-                <input
-                    type="text"
-                    placeholder="Enter the category"
-                    className="rounded-2xl border-2 px-2 py-1"
-                />
+                <div className="flex gap-2">
+                    <input
+                        type="text"
+                        placeholder="Enter the category"
+                        className="rounded-md border-2 px-2 py-1"
+                    />
+                    <select className="border rounded-md px-2 py-1">
+                        <option value="">Choose condition</option>
+                        <option value="new">New</option>
+                        <option value="like-new">Like New</option>
+                        <option value="good">Good</option>
+                        <option value="fair">Fair</option>
+                        <option value="used">Used</option>
+                        <option value="old">Old</option>
+                    </select>
+                </div>
 
                 <div
                     onDrop={handleDrop}
