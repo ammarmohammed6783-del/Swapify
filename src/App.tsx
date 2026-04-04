@@ -22,10 +22,10 @@ function App() {
         <Route path='messages' element={<Messages />} />
         <Route path='profile' element={<Profile />} />
         <Route path='settings' element={<Settings />} />
+        <Route path='addItem' element={<AddItem />} />
       </Route>
       <Route path='/signIn' element={<SignIn />} />
       <Route path='/login' element={<LogIn />} />
-      <Route path='/addItem' element={<AddItem />} />
       <Route path='/description' element={<HowItWork />} />
     </Routes>
   )
