@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function SignIn() {
+function LogIn() {
     return (
         <div>
             <div className="h-screen py-8 flex items-center justify-center">
@@ -12,16 +12,6 @@ function SignIn() {
                     
                     <form className="w-full flex flex-col gap-5 mt-2">
                         <div className="space-y-4">
-                            <div>
-                                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" htmlFor="name">Full Name</label>
-                                <input 
-                                    id="name"
-                                    type="text" 
-                                    className="w-full px-4 py-2.5 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-slate-100 transition-all text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500" 
-                                    placeholder="John Doe" 
-                                />
-                            </div>
-
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" htmlFor="email">Email</label>
                                 <input 
@@ -61,4 +51,4 @@ function SignIn() {
     )
 }
 
-export default SignIn
+export default LogIn
