@@ -20,7 +20,7 @@ const Card = ({ data }: { data: CardType }) => {
     }
 
     return (
-        <div className="w-3/12 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-xl overflow-hidden transition-colors shadow-sm relative">
+        <div className="h-125 w-3/12 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-xl overflow-hidden transition-colors shadow-sm relative">
             {
                 favourite ? (
                     <FaStar
@@ -37,34 +37,40 @@ const Card = ({ data }: { data: CardType }) => {
             <img
                 src={data.imgSrc}
                 alt=""
-                className="bg-slate-200 dark:bg-slate-800 w-full h-48 object-cover"
+                className="bg-slate-200 dark:bg-slate-800 w-full h-1/3 object-cover"
             />
 
-            <div className="p-4 h-56 flex flex-col">
-                <h3 className="font-bold text-slate-900 dark:text-slate-100 text-lg">
-                    {data.header3}
-                </h3>
+            <div className="p-4 flex flex-col justify-between h-2/3">
+                <div>
+                    <h3 className="font-bold text-slate-900 dark:text-slate-100 text-lg">
+                        {data.header3}
+                    </h3>
 
-                <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
-                    {data.paragraph}
-                </p>
+                    <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
+                        {data.paragraph}
+                    </p>
 
-                <p className="flex items-center gap-1.5 py-3 text-slate-500 dark:text-slate-400 text-sm">
-                    <IoLocationOutline className="text-lg" />
-                    {data.place}
-                </p>
+                    <p className="flex items-center gap-1.5 py-3 text-slate-500 dark:text-slate-400 text-sm">
+                        <IoLocationOutline className="text-lg" />
+                        {data.place}
+                    </p>
 
-                <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                    Interested in:
-                </p>
+                    <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                        Interested in:
+                    </p>
 
-                <div className="flex flex-wrap gap-1">
-                    {data.interests.map((item, i) => (
-                        <Intersted key={i} text={item} />
-                    ))}
+                    <div className="flex flex-wrap gap-1">
+                        {data.interests.map((item, i) => (
+                            <Intersted key={i} text={item} />
+                        ))}
+                    </div>
                 </div>
 
-                <button className="w-full text-center mt-auto bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 gap-2 rounded-lg py-2 px-3 transition-colors font-medium">
+                <button
+                    type="button"
+                    aria-label="Propose a trade with this user"
+                    className="w-full text-center mt-4 bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 rounded-lg py-2 px-3 transition-colors font-medium"
+                >
                     Propose Trade
                 </button>
             </div>
