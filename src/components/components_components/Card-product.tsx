@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { CiStar } from "react-icons/ci";
+import { FaStar } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 
 type CardType = {
@@ -9,15 +12,35 @@ type CardType = {
 };
 
 const Card = ({ data }: { data: CardType }) => {
+
+    const [favourite, setFavourite] = useState(false);
+
+    function addToFavourite() {
+        setFavourite(!favourite);
+    }
+
     return (
-        <div className="w-3/12 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-xl overflow-hidden transition-colors shadow-sm">
+        <div className="w-3/12 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-xl overflow-hidden transition-colors shadow-sm relative">
+            {
+                favourite ? (
+                    <FaStar
+                        className="absolute text-amber-400 text-xl top-2 right-2"
+                        onClick={addToFavourite}
+                    />
+                ) : (
+                    <CiStar
+                        className="absolute text-amber-400 text-xl top-2 right-2"
+                        onClick={addToFavourite}
+                    />
+                )
+            }
             <img
                 src={data.imgSrc}
                 alt=""
-                className="bg-slate-200 dark:bg-slate-800 w-full h-50 object-cover"
+                className="bg-slate-200 dark:bg-slate-800 w-full h-48 object-cover"
             />
 
-            <div className="p-4 h-75 flex flex-col">
+            <div className="p-4 h-56 flex flex-col">
                 <h3 className="font-bold text-slate-900 dark:text-slate-100 text-lg">
                     {data.header3}
                 </h3>
