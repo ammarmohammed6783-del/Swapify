@@ -3,16 +3,10 @@ import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 
-import { useFavorites } from "../FavoriteContext/FavoriteProvider";
+import { useFavorites } from "../../context/FavoriteContext";
+import type { CardData } from "../../types";
 
-type CardType = {
-    id: string | number;
-    imgSrc: string;
-    header3: string;
-    paragraph: string;
-    place: string;
-    interests: string[];
-};
+type CardType = CardData;
 
 const Card = ({ data }: { data: CardType }) => {
 

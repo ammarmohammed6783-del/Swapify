@@ -1,8 +1,8 @@
 import type { ReactNode } from "react"
-import Card from "./components_components/Card-product"
-import Category from "./components_components/Category"
-import Description from "./components_components/Description"
-import Ready from "./components_components/Ready"
+import Card from "./content/Card-product"
+import Category from "./content/Category"
+import Description from "./content/Description"
+import Ready from "./content/Ready"
 import cards from "../data/Cards_info";
 
 interface FeedProps {

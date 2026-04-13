@@ -13,7 +13,7 @@ import HowItWork from './pages/HowItWork'
 import Settings from './pages/Settings'
 import Favourites from './pages/Favourites'
 
-import FavoriteProvider from "./components/FavoriteContext/FavoriteProvider"
+import FavoriteProvider from "./context/FavoriteContext"
 
 function App() {
   return (

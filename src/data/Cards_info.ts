@@ -1,13 +1,8 @@
-export type Card = {
-    id: number;
-    imgSrc: string;
-    header3: string;
-    paragraph: string;
-    place: string;
-    interests: string[];
-};
+import type { CardData } from "../types";
 
-const Cards: Card[] = [
+export type Card = CardData;
+
+const Cards: CardData[] = [
     {
         id: 1,
         imgSrc: "",

@@ -1,10 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import type { ReactNode } from "react";
-
-type FavoriteItem = {
-    id: string | number;
-    [key: string]: unknown;
-};
+import type { FavoriteItem } from "../types";
 
 type FavoriteContextType = {
     favorites: FavoriteItem[];
