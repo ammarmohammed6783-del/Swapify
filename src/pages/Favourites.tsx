@@ -1,8 +1,6 @@
-import { useState } from "react"
+function Favourites() {
 
-export default function Favourites() {
-
-    const [cards, setCards] = useState([])
+    
 
     return (
         <div>
@@ -10,3 +8,5 @@ export default function Favourites() {
         </div>
     )
 }
+
+export default Favourites

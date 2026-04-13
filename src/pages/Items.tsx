@@ -30,10 +30,10 @@ type WideCardProps = {
 
 // ---------------------- MAIN COMPONENT ----------------------
 const Items = () => {
-    const [total, setTotal] = useState(0);
-    const [active, setActive] = useState(10);
-    const [views, setViews] = useState(0);
-    const [tradeOffers, setTradeOffers] = useState(0);
+    const total = 0;
+    const active = 10;
+    const views = 0;
+    const tradeOffers = 0;
 
     const cards: CardInfo[] = [
         { value: total, text: "Total Items" },

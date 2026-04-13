@@ -13,23 +13,27 @@ import HowItWork from './pages/HowItWork'
 import Settings from './pages/Settings'
 import Favourites from './pages/Favourites'
 
+import FavoriteProvider from "./components/FavoriteContext/FavoriteProvider"
+
 function App() {
   return (
-    <Routes>
-      <Route path='/' element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path='explore' element={<Explore />} />
-        <Route path='favourites' element={<Favourites />} />
-        <Route path='items' element={<Items />} />
-        <Route path='messages' element={<Messages />} />
-        <Route path='profile' element={<Profile />} />
-        <Route path='settings' element={<Settings />} />
-        <Route path='addItem' element={<AddItem />} />
-      </Route>
-      <Route path='/signIn' element={<SignIn />} />
-      <Route path='/login' element={<LogIn />} />
-      <Route path='/description' element={<HowItWork />} />
-    </Routes>
+    <FavoriteProvider>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path='explore' element={<Explore />} />
+          <Route path='favourites' element={<Favourites />} />
+          <Route path='items' element={<Items />} />
+          <Route path='messages' element={<Messages />} />
+          <Route path='profile' element={<Profile />} />
+          <Route path='settings' element={<Settings />} />
+          <Route path='addItem' element={<AddItem />} />
+        </Route>
+        <Route path='/signIn' element={<SignIn />} />
+        <Route path='/login' element={<LogIn />} />
+        <Route path='/description' element={<HowItWork />} />
+      </Routes>
+    </FavoriteProvider>
   )
 }
 
