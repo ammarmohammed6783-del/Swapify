@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useMemo } from "react";
 import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 
+import { useFavorites } from "../FavoriteContext/FavoriteProvider";
+
 type CardType = {
+    id: string | number;
     imgSrc: string;
     header3: string;
     paragraph: string;
@@ -13,24 +16,25 @@ type CardType = {
 
 const Card = ({ data }: { data: CardType }) => {
 
-    const [favourite, setFavourite] = useState(false);
+    const { favorites, toggleFavorite } = useFavorites();
 
-    function addToFavourite() {
-        setFavourite(!favourite);
-    }
+    const isFavourite = useMemo(
+        () => favorites.some((fav) => fav.id === data.id),
+        [favorites, data.id]
+    );
 
     return (
         <div className="h-125 w-3/12 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-xl overflow-hidden transition-colors shadow-sm relative">
             {
-                favourite ? (
+                isFavourite ? (
                     <FaStar
-                        className="absolute text-amber-400 text-xl top-2 right-2"
-                        onClick={addToFavourite}
+                        className="absolute text-amber-400 text-xl top-2 right-2 cursor-pointer"
+                        onClick={() => toggleFavorite(data)}
                     />
                 ) : (
                     <CiStar
-                        className="absolute text-amber-400 text-xl top-2 right-2"
-                        onClick={addToFavourite}
+                        className="absolute text-amber-400 text-xl top-2 right-2 cursor-pointer"
+                        onClick={() => toggleFavorite(data)}
                     />
                 )
             }

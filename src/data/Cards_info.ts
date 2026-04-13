@@ -1,4 +1,5 @@
 export type Card = {
+    id: number;
     imgSrc: string;
     header3: string;
     paragraph: string;
@@ -8,6 +9,7 @@ export type Card = {
 
 const Cards: Card[] = [
     {
+        id: 1,
         imgSrc: "",
         header3: "Vintage Film Camera",
         paragraph: "beautiful Vintage 35mm film camera in excellent working condition",
@@ -15,6 +17,7 @@ const Cards: Card[] = [
         interests: ["electronics", "tools", "toys", "clothing", "music"]
     },
     {
+        id: 2,
         imgSrc: "",
         header3: "Vintage Film Camera",
         paragraph: "beautiful Vintage 35mm film camera in excellent working condition",
@@ -22,6 +25,7 @@ const Cards: Card[] = [
         interests: ["electronics", "tools", "toys", "clothing", "music"]
     },
     {
+        id: 3,
         imgSrc: "",
         header3: "glasses",
         paragraph: "very high quality glasses, like new",
@@ -29,6 +33,7 @@ const Cards: Card[] = [
         interests: ["toys", "clothing", "music", "football"]
     },
     {
+        id: 4,
         imgSrc: "",
         header3: "glasses",
         paragraph: "very high quality glasses, like new",

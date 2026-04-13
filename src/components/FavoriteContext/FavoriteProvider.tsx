@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import type { ReactNode } from "react";
 
 type FavoriteItem = {
@@ -11,7 +11,15 @@ type FavoriteContextType = {
     toggleFavorite: (item: FavoriteItem) => void;
 };
 
-const FavoriteContext = createContext<FavoriteContextType | null>(null);
+export const FavoriteContext = createContext<FavoriteContextType | null>(null);
+
+export function useFavorites() {
+    const context = useContext(FavoriteContext);
+    if (!context) {
+        throw new Error("useFavorites must be used within FavoriteProvider");
+    }
+    return context;
+}
 
 type FavoriteProviderProps = {
     children: ReactNode;
