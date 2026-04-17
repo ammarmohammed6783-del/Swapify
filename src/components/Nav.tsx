@@ -28,6 +28,7 @@ function Nav() {
 
     return (
         <div className="sticky top-0 left-0 w-full h-14 shadow-sm border-b border-slate-200 dark:border-slate-800 px-4 flex justify-between items-center z-50 bg-white dark:bg-slate-950 transition-colors duration-300">
+            {isSearchFocused && <div className="fixed inset-0 top-14 bg-black/50 transition-opacity" />}
             <div className="flex gap-4 items-center">
                 <p className="font-bold text-xl tracking-tight text-slate-900 dark:text-slate-100">Trade Hub</p>
                 <div className="flex items-center gap-1 ml-4 border-l pl-4 border-slate-200 dark:border-slate-800">
