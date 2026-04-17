@@ -1,6 +1,8 @@
 import { useState, useRef } from "react";
 import { IoMdAdd, IoMdClose, IoMdImages } from "react-icons/io";
 import { Button } from "@/components/ui/button";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function AddItem() {
     const [formData, setFormData] = useState({
@@ -75,6 +77,8 @@ function AddItem() {
         // Here you would typically send the data to your backend
         console.log("Form Data:", formData);
         console.log("Images:", images);
+
+        toast.success("Added successfully");
 
         // Reset form
         setFormData({
@@ -273,6 +277,7 @@ function AddItem() {
                             Cancel
                         </Button>
                     </div>
+                    <ToastContainer position="top-center" />
                 </form>
             </div>
         </div>
