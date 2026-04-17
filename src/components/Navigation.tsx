@@ -24,18 +24,6 @@ function Navigation() {
             </NavLink>
 
             <NavLink
-                to="/explore"
-                className={({ isActive }) =>
-                    `flex items-center gap-2 rounded-lg w-full h-10 p-3 transition-colors ${isActive
-                        ? "bg-slate-900 text-white dark:bg-slate-800 dark:text-white font-medium"
-                        : "text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900"
-                    }`
-                }
-            >
-                <MdOutlineExplore /> Explore
-            </NavLink>
-
-            <NavLink
                 to="/favourites"
                 className={({ isActive }) =>
                     `flex items-center gap-2 rounded-lg w-full h-10 p-3 transition-colors ${isActive
