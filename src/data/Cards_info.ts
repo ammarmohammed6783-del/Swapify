@@ -1,5 +1,18 @@
 import type { CardData } from "../types";
 
+
+
+export const Categories = [
+    "electronics",
+    "tools",
+    "toys",
+    "clothing",
+    "music",
+    "football",
+];
+
+
+
 export type Card = CardData;
 
 const Cards: CardData[] = [

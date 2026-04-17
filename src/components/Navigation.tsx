@@ -1,5 +1,4 @@
 import { AiFillHome } from "react-icons/ai";
-import { MdOutlineExplore } from "react-icons/md";
 import { FiBox } from "react-icons/fi";
 import { FiMessageCircle } from "react-icons/fi";
 import { IoPersonOutline } from "react-icons/io5";
