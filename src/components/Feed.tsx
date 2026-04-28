@@ -3,6 +3,7 @@ import Card from "./content/Card-product"
 import Category from "./content/Category"
 import Description from "./content/Description"
 import Ready from "./content/Ready"
+import FooterInfo from "./content/FooterInfo"
 import cards from "../data/Cards_info";
 
 interface FeedProps {
@@ -68,6 +69,7 @@ function Feed({ infos, children, showDescription = true }: FeedProps) {
 
             {/* Ready Section */}
             <Ready />
+            <FooterInfo />
         </div>
     )
 }
