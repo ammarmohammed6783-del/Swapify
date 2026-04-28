@@ -4,6 +4,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { CiCalendar } from "react-icons/ci";
 import { CiStar } from "react-icons/ci";
 import { CiSettings } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
 
@@ -21,9 +22,11 @@ const Profile = () => {
                     <div className="flex justify-between items-start">
                         <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Ammar Mohammed</h1>
                         <div className="flex gap-3">
-                            <button className="bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 px-4 py-2 rounded-lg h-10 flex items-center gap-2 transition-colors font-medium text-sm">
-                                <CiSettings className="text-xl" /> Edit Profile
-                            </button>
+                            <Link to="/settings">
+                                <button className="bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 px-4 py-2 rounded-lg h-10 flex items-center gap-2 transition-colors font-medium text-sm">
+                                    <CiSettings className="text-xl" /> Edit Profile
+                                </button>
+                            </Link>
                             <button className="text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 bg-red-50 hover:bg-red-100 dark:bg-red-950/30 dark:hover:bg-red-900/40 px-4 py-2 rounded-lg h-10 flex items-center gap-2 transition-colors font-medium text-sm border border-red-200 dark:border-red-800/50">
                                 Log Out
                             </button>
@@ -76,41 +79,41 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-            
+
             <Tabs defaultValue="history" className="w-full mt-8">
                 <TabsList className="w-full h-14 bg-slate-100/60 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800/60 p-1.5 rounded-2xl mb-8 shadow-inner transition-colors">
-                    <TabsTrigger 
-                        value="history" 
+                    <TabsTrigger
+                        value="history"
                         className="w-full h-full text-[15px] font-semibold rounded-xl text-slate-600 dark:text-slate-400 data-[state=active]:bg-white dark:data-[state=active]:bg-slate-800 data-[state=active]:text-slate-900 dark:data-[state=active]:text-slate-100 data-[state=active]:shadow-sm hover:text-slate-900 dark:hover:text-slate-200 transition-all duration-300"
                     >
                         Trade History
                     </TabsTrigger>
-                    <TabsTrigger 
-                        value="reviews" 
+                    <TabsTrigger
+                        value="reviews"
                         className="w-full h-full text-[15px] font-semibold rounded-xl text-slate-600 dark:text-slate-400 data-[state=active]:bg-white dark:data-[state=active]:bg-slate-800 data-[state=active]:text-slate-900 dark:data-[state=active]:text-slate-100 data-[state=active]:shadow-sm hover:text-slate-900 dark:hover:text-slate-200 transition-all duration-300"
                     >
                         Reviews <span></span>
                     </TabsTrigger>
-                    <TabsTrigger 
-                        value="settings" 
+                    <TabsTrigger
+                        value="settings"
                         className="w-full h-full text-[15px] font-semibold rounded-xl text-slate-600 dark:text-slate-400 data-[state=active]:bg-white dark:data-[state=active]:bg-slate-800 data-[state=active]:text-slate-900 dark:data-[state=active]:text-slate-100 data-[state=active]:shadow-sm hover:text-slate-900 dark:hover:text-slate-200 transition-all duration-300"
                     >
                         Settings
                     </TabsTrigger>
                 </TabsList>
-                
+
                 <TabsContent value="history" className="space-y-4 focus-visible:outline-none focus-visible:ring-0 animate-in slide-in-from-bottom-4 fade-in-0 duration-500 ease-out">
                     {/* when there are real data make map and put the number of those itemCard in the span that besides reviews */}
                     <ItemCard />
                     <ItemCard />
                 </TabsContent>
-                
+
                 <TabsContent value="reviews" className="p-8 text-center border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 min-h-75 flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 focus-visible:outline-none focus-visible:ring-0 animate-in slide-in-from-bottom-4 fade-in-0 duration-500 ease-out">
                     <CiStar className="text-4xl text-slate-300 dark:text-slate-700 mb-3 animate-pulse" />
                     <p className="text-lg font-medium text-slate-700 dark:text-slate-300">No reviews yet</p>
                     <p className="text-sm mt-1">Complete a trade to start earning reviews.</p>
                 </TabsContent>
-                
+
                 <TabsContent value="settings" className="p-8 text-center border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 min-h-75 flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 focus-visible:outline-none focus-visible:ring-0 animate-in slide-in-from-bottom-4 fade-in-0 duration-500 ease-out">
                     <CiSettings className="text-4xl text-slate-300 dark:text-slate-700 mb-3 transition-transform duration-700 hover:rotate-180" />
                     <p className="text-lg font-medium text-slate-700 dark:text-slate-300">Account Settings</p>
