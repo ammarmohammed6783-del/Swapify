@@ -7,13 +7,14 @@ interface probs {
         photoName: string;
         userName: string;
         message: string;
-    }
+    },
+    onClick: () => void
 }
 
-function User({ element }: probs) {
+function User({ element, onClick }: probs) {
     return (
-        <div className="rounded-xl p-3 hover:bg-slate-100 dark:hover:bg-slate-800/50 flex gap-3 cursor-pointer transition-colors border border-transparent hover:border-slate-200 dark:hover:border-slate-700">
-            <div className="flex-shrink-0">
+        <div className="rounded-xl p-3 hover:bg-slate-100 dark:hover:bg-slate-800/50 flex gap-3 cursor-pointer transition-colors border border-transparent hover:border-slate-200 dark:hover:border-slate-700" onClick={onClick}>
+            <div className="shrink-0">
                 <div className="rounded-full flex justify-center items-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 w-12 h-12 text-sm font-medium">
                     {element.photoName}
                 </div>

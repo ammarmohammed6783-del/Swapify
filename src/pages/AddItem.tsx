@@ -93,6 +93,14 @@ function AddItem() {
         setImagePreviews([]);
     };
 
+    // handling item value to render it in 
+
+
+
+    function addItemToList() {
+        // let item = 
+    }
+
     return (
         <div className="min-h-screen bg-slate-50 dark:bg-slate-950 py-8 px-4 transition-colors">
             <div className="max-w-2xl mx-auto">
@@ -262,6 +270,7 @@ function AddItem() {
                     {/* Submit Button */}
                     <div className="flex gap-4 pt-4">
                         <Button
+                            onClick={addItemToList}
                             type="submit"
                             className="flex-1 bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-slate-200 text-white dark:text-slate-900 py-3 text-lg font-semibold"
                         >

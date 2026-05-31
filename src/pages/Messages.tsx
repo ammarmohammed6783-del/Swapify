@@ -22,7 +22,7 @@ const Messages = () => {
             userName: "Mohammed Ali",
             message: "yes brother there are aloooot out there..."
         },
-                {
+        {
             photoName: "MM",
             userName: "Ammar Mohammed",
             message: "yes brother there are aloooot out there..."
@@ -37,7 +37,7 @@ const Messages = () => {
             userName: "Mohammed Ali",
             message: "yes brother there are aloooot out there..."
         },
-                {
+        {
             photoName: "MM",
             userName: "Ammar Mohammed",
             message: "yes brother there are aloooot out there..."
@@ -56,10 +56,17 @@ const Messages = () => {
 
     const [searchedName, setSearchedName] = useState("");
 
+    
+    const [clicked, setClicked] = useState(false)
+
+    function handleClickedUser() {
+        setClicked(!clicked);
+    }
+
     return (
         <div className="h-[calc(100vh-3.5rem)] pt-5">
             <div className="w-[70%] h-[90%] m-auto flex border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm rounded-xl overflow-hidden transition-colors">
-                
+
                 {/* Left Sidebar: Conversations List */}
                 <div className="border-r border-slate-200 dark:border-slate-800 w-1/3 flex flex-col">
                     <div className="border-b border-slate-200 dark:border-slate-800">
@@ -76,12 +83,12 @@ const Messages = () => {
                             </form>
                         </div>
                     </div>
-                    
+
                     <div className="overflow-y-auto flex-1 p-2 no-scrollbar">
                         {
                             users.map((ele, index) => {
                                 if (ele.userName.toLowerCase().includes(searchedName.toLowerCase())) {
-                                    return <User element={ele} key={index} />
+                                    return <User onClick={handleClickedUser} element={ele} key={index} />
                                 }
                             })
                         }
@@ -90,11 +97,18 @@ const Messages = () => {
 
                 {/* Right Area: Empty State */}
                 <div className="h-full flex justify-center items-center flex-col p-5 text-center w-2/3 bg-slate-50/50 dark:bg-slate-900/50">
-                    <div className="bg-slate-100 dark:bg-slate-800 w-16 h-16 rounded-full flex items-center justify-center mb-4 border border-slate-200 dark:border-slate-700">
-                        <IoSearchOutline className="text-3xl text-slate-400 dark:text-slate-500" />
-                    </div>
-                    <h3 className="font-bold text-slate-900 dark:text-slate-100 mb-2 text-xl">Download Swapify for Windows</h3>
-                    <p className="text-slate-500 dark:text-slate-400 max-w-sm">Use the desktop application for faster chatting and trade notifications.</p>
+                    {
+                        clicked ?
+                            <div>
+                                <div className="bg-slate-100 dark:bg-slate-800 w-16 h-16 rounded-full flex items-center justify-center mb-4 border border-slate-200 dark:border-slate-700">
+                                    <IoSearchOutline className="text-3xl text-slate-400 dark:text-slate-500" />
+                                </div>
+                                <h3 className="font-bold text-slate-900 dark:text-slate-100 mb-2 text-xl">Download Swapify for Windows</h3>
+                                <p className="text-slate-500 dark:text-slate-400 max-w-sm">Use the desktop application for faster chatting and trade notifications.</p>
+                            </div>
+                            :
+                            <div>hello</div>
+                    }
                 </div>
 
             </div>
