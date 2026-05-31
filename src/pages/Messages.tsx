@@ -56,7 +56,7 @@ const Messages = () => {
 
     const [searchedName, setSearchedName] = useState("");
 
-    
+
     const [clicked, setClicked] = useState(false)
 
     function handleClickedUser() {
@@ -99,7 +99,7 @@ const Messages = () => {
                 <div className="h-full flex justify-center items-center flex-col p-5 text-center w-2/3 bg-slate-50/50 dark:bg-slate-900/50">
                     {
                         clicked ?
-                            <div>
+                            <div className="flex justify-center items-center flex-col">
                                 <div className="bg-slate-100 dark:bg-slate-800 w-16 h-16 rounded-full flex items-center justify-center mb-4 border border-slate-200 dark:border-slate-700">
                                     <IoSearchOutline className="text-3xl text-slate-400 dark:text-slate-500" />
                                 </div>
