@@ -5,10 +5,40 @@ import { CiCalendar } from "react-icons/ci";
 import { CiStar } from "react-icons/ci";
 import { CiSettings } from "react-icons/ci";
 import { Link } from "react-router-dom";
+import WideCard from "@/components/WideCard";
+import { useItems } from "@/context/ItemsContext";
+import { BsThreeDots } from "react-icons/bs";
 
 const Profile = () => {
 
     let Tages = ["Top Trader", "Fast Responder", "Rated"]
+    const { items } = useItems();
+
+    type Listing = {
+        title: string;
+        tags: string[];
+        postedAgo: string;
+        stats: {
+            views: number;
+            offers: number;
+        };
+        actions: string[];
+        status: string;
+        moreOptionsIcon: React.ComponentType<{ className?: string }>;
+    };
+
+    const listings: Listing[] = items.map((item) => ({
+        title: item.header3,
+        tags: item.interests,
+        postedAgo: "Just added",
+        stats: {
+            views: item.stats?.views ?? 120,
+            offers: item.stats?.offers ?? 4,
+        },
+        actions: ["View Offers", "Edit Listing"],
+        status: "Active",
+        moreOptionsIcon: BsThreeDots,
+    }));
 
     return (
         <div className="mx-auto w-[70%]">
@@ -24,7 +54,7 @@ const Profile = () => {
                         <div className="flex gap-3">
                             <Link to="/settings">
                                 <button className="bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 px-4 py-2 rounded-lg h-10 flex items-center gap-2 transition-colors font-medium text-sm">
-                                    <CiSettings className="text-xl" /> Edit Profile
+                                    <CiSettings className="text-xl" /> settings
                                 </button>
                             </Link>
                             <button className="text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 bg-red-50 hover:bg-red-100 dark:bg-red-950/30 dark:hover:bg-red-900/40 px-4 py-2 rounded-lg h-10 flex items-center gap-2 transition-colors font-medium text-sm border border-red-200 dark:border-red-800/50">
@@ -94,30 +124,20 @@ const Profile = () => {
                     >
                         Reviews <span></span>
                     </TabsTrigger>
-                    <TabsTrigger
-                        value="settings"
-                        className="w-full h-full text-[15px] font-semibold rounded-xl text-slate-600 dark:text-slate-400 data-[state=active]:bg-white dark:data-[state=active]:bg-slate-800 data-[state=active]:text-slate-900 dark:data-[state=active]:text-slate-100 data-[state=active]:shadow-sm hover:text-slate-900 dark:hover:text-slate-200 transition-all duration-300"
-                    >
-                        Settings
-                    </TabsTrigger>
                 </TabsList>
 
                 <TabsContent value="history" className="space-y-4 focus-visible:outline-none focus-visible:ring-0 animate-in slide-in-from-bottom-4 fade-in-0 duration-500 ease-out">
                     {/* when there are real data make map and put the number of those itemCard in the span that besides reviews */}
-                    <ItemCard />
-                    <ItemCard />
+                    {listings.map((listing, index) => (
+                        <WideCard key={index} listing={listing} />
+                    ))}
+
                 </TabsContent>
 
                 <TabsContent value="reviews" className="p-8 text-center border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 min-h-75 flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 focus-visible:outline-none focus-visible:ring-0 animate-in slide-in-from-bottom-4 fade-in-0 duration-500 ease-out">
                     <CiStar className="text-4xl text-slate-300 dark:text-slate-700 mb-3 animate-pulse" />
                     <p className="text-lg font-medium text-slate-700 dark:text-slate-300">No reviews yet</p>
                     <p className="text-sm mt-1">Complete a trade to start earning reviews.</p>
-                </TabsContent>
-
-                <TabsContent value="settings" className="p-8 text-center border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 min-h-75 flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 focus-visible:outline-none focus-visible:ring-0 animate-in slide-in-from-bottom-4 fade-in-0 duration-500 ease-out">
-                    <CiSettings className="text-4xl text-slate-300 dark:text-slate-700 mb-3 transition-transform duration-700 hover:rotate-180" />
-                    <p className="text-lg font-medium text-slate-700 dark:text-slate-300">Account Settings</p>
-                    <p className="text-sm mt-1">Manage your preferences and notifications.</p>
                 </TabsContent>
             </Tabs>
         </div>
@@ -129,39 +149,5 @@ export default Profile
 function Tag({ text }: { text: string }) {
     return (
         <div className="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 rounded-lg w-fit text-sm font-medium transition-colors hover:bg-slate-200 dark:hover:bg-slate-700 cursor-default">{text}</div>
-    )
-}
-
-function ItemCard() {
-    return (
-        <div className="group border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 my-4 rounded-xl flex items-center justify-between gap-4 transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/50 dark:hover:shadow-slate-900/50 hover:-translate-y-1 hover:border-slate-300 dark:hover:border-slate-700 cursor-pointer">
-            <div className="flex gap-5 items-center">
-                <div className="w-24 h-24 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex-0 transition-transform duration-500 group-hover:scale-105"></div>
-                <div>
-                    <h3 className="font-bold text-slate-900 dark:text-slate-100 text-lg transition-colors group-hover:text-slate-700 dark:group-hover:text-slate-300">vintage film camera</h3>
-                    <div className="space-y-1 mt-1">
-                        <p className="text-slate-500 dark:text-slate-400 text-sm flex items-center gap-2">
-                            <span>Traded with</span>
-                            <span className="font-medium text-slate-700 dark:text-slate-300 transition-colors">Sarah Chen</span>
-                        </p>
-                        <p className="text-slate-500 dark:text-slate-400 text-sm flex items-center gap-2">
-                            <span>Traded for</span>
-                            <span className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-700 dark:text-slate-300 font-medium transition-colors group-hover:bg-slate-200 dark:group-hover:bg-slate-700">professional camera lens</span>
-                        </p>
-                        <p className="text-slate-400 dark:text-slate-500 text-xs mt-2">2 weeks ago</p>
-                    </div>
-                </div>
-            </div>
-            <div className="flex flex-col justify-between items-end h-full gap-6">
-                <div className="border border-emerald-200 dark:border-emerald-800/80 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all group-hover:bg-emerald-100 animate-in fade-in zoom-in duration-500">completed</div>
-                <div className="flex gap-1 transition-transform duration-300 group-hover:scale-110">
-                    <CiStar className="text-amber-400 text-xl" />
-                    <CiStar className="text-amber-400 text-xl" />
-                    <CiStar className="text-amber-400 text-xl" />
-                    <CiStar className="text-amber-400 text-xl" />
-                    <CiStar className="text-amber-400 text-xl" />
-                </div>
-            </div>
-        </div>
     )
 }

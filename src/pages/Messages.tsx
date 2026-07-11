@@ -1,13 +1,19 @@
-interface Props {
-    element: {
-        photoName: string;
-        userName: string;
-        message: string;
+﻿interface Props {
+    element?: {
+        photoName?: string;
+        userName?: string;
+        message?: string;
     };
-    onClick: () => void;
+    onClick?: () => void;
 }
 
-function User({ element, onClick }: Props) {
+function Messages({ element, onClick }: Props) {
+    const user = element ?? {
+        photoName: "ME",
+        userName: "Messages",
+        message: "No conversations yet",
+    };
+
     return (
         <div
             onClick={onClick}
@@ -47,21 +53,21 @@ function User({ element, onClick }: Props) {
                         font-semibold
                     "
                 >
-                    {element.photoName}
+                    {user.photoName}
                 </div>
             </div>
 
             <div className="overflow-hidden flex flex-col justify-center gap-1">
                 <h3 className="font-semibold text-slate-900 dark:text-slate-100 truncate">
-                    {element.userName}
+                    {user.userName}
                 </h3>
 
                 <p className="text-sm text-slate-500 dark:text-slate-400 truncate leading-relaxed">
-                    {element.message}
+                    {user.message}
                 </p>
             </div>
         </div>
     );
 }
 
-export default User;
+export default Messages;

@@ -5,6 +5,10 @@ export type CardData = {
     paragraph: string;
     place: string;
     interests: string[];
+    stats?: {
+        views: number;
+        offers: number;
+    };
 };
 
 export type FavoriteItem = CardData;
